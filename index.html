@@ -108,10 +108,28 @@
 
   .grid5{display:grid; grid-template-columns:repeat(5, 1fr); gap:28px 20px;}
   .grid4{display:grid; grid-template-columns:repeat(4, 1fr); gap:28px 22px;}
-  .card{cursor:pointer; position:relative;}
+  .card{cursor:pointer; position:relative; display:block;}
   .thumb{position:relative; aspect-ratio:1/1; background:var(--gray-light); overflow:hidden; margin-bottom:12px;}
-  .thumb img{width:100%; height:100%; object-fit:cover; transition:transform .4s;}
-  .card:hover .thumb img{transform:scale(1.04);}
+  .thumb img{width:100%; height:100%; object-fit:cover; transition:transform .4s; position:absolute; top:0; left:0; opacity:0;}
+  .thumb img.active{opacity:1;}
+  .card:hover .thumb img.active{transform:scale(1.04);}
+
+  /* 썸네일 좌우 넘김 버튼: 평소엔 숨김, 카드에 마우스 올리면(hover) 노출 */
+  .thumb-nav{
+    position:absolute; top:50%; transform:translateY(-50%); z-index:3;
+    width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,.9);
+    display:flex; align-items:center; justify-content:center;
+    opacity:0; pointer-events:none; transition:opacity .18s; cursor:pointer;
+    box-shadow:0 1px 4px rgba(0,0,0,.15);
+  }
+  .card:hover .thumb-nav{opacity:1; pointer-events:auto;}
+  .thumb-nav.prev{left:6px;} .thumb-nav.next{right:6px;}
+  .thumb-nav svg{width:14px; height:14px; stroke:#141414; stroke-width:2.4; fill:none;}
+
+  .thumb-dots{position:absolute; bottom:8px; left:0; right:0; z-index:3; display:flex; justify-content:center; gap:4px;}
+  .thumb-dots i{width:5px; height:5px; border-radius:50%; background:rgba(255,255,255,.6); list-style:none;}
+  .thumb-dots i.active{background:#fff;}
+
   .rank-badge{position:absolute; top:8px; left:8px; z-index:2; width:24px; height:24px; background:#141414; color:#fff; font-size:12px; font-weight:800; display:flex; align-items:center; justify-content:center;}
   .wish{position:absolute; top:4px; right:0; z-index:2; width:18px; height:18px;}
   .wish svg{width:100%; height:100%; stroke:#B4B4B4; stroke-width:1.6; fill:none;}
@@ -171,8 +189,9 @@
   .m-section{padding:22px 16px 6px;}
   .m-section h4{font-size:16px; font-weight:800; margin-bottom:14px;}
   .m-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px 12px;}
-  .m-card .thumb{aspect-ratio:1/1; background:var(--gray-light); margin-bottom:8px; overflow:hidden;}
-  .m-card .thumb img{width:100%; height:100%; object-fit:cover;}
+  .m-card{display:block;}
+  .m-card .thumb{aspect-ratio:1/1; background:var(--gray-light); margin-bottom:8px; overflow:hidden; position:relative;}
+  .m-card .thumb img{width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;}
   .m-card .name{font-size:12.5px; line-height:1.4; margin-bottom:4px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; min-height:2.7em;}
   .m-card .price{font-size:14px; font-weight:800;}
   .m-card .discount{color:var(--sale); font-weight:800; font-size:13px; margin-right:4px;}
@@ -258,12 +277,12 @@
 </section>
 
 <section class="section">
-  <h3 class="section-title">신상품</h3>
+  <h3 class="section-title">베스트상품</h3>
   <div class="grid5" id="newGrid"></div>
 </section>
 
 <section class="section">
-  <h3 class="section-title">베스트상품</h3>
+  <h3 class="section-title">신상품</h3>
   <div class="tab-row"><span>실시간</span><span>일간</span><span>주간</span><span class="active">월간</span></div>
   <div class="grid4" id="bestGrid"></div>
 </section>
@@ -317,16 +336,36 @@
 <script>
   const shipIcon = `<svg viewBox="0 0 24 24" fill="none"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg>`;
   const wishIcon = `<svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.2 2.3 5 5.7 5c1.9 0 3.4 1 4.3 2.4C11 6 12.5 5 14.4 5c3.4 0 5.3 3.2 3.7 6.7C19.5 16.4 12 21 12 21z"/></svg>`;
+  const arrowPrev = `<svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+  const arrowNext = `<svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+  // 상품 썸네일: images 배열에 이미지를 최대 5개까지 등록 가능 (없으면 placehold.co 임시 이미지 1장)
+  function productImages(p, i){
+    if (p.images && p.images.length) return p.images.slice(0,5);
+    return [`https://placehold.co/600x600/${p.color}?font=noto-sans&text=PRODUCT+${String(i+1).padStart(2,'0')}`];
+  }
+
+  // 카드 전체 클릭 시 이동할 상세페이지 링크. p.link 를 등록하면 그 주소로, 없으면 임시로 '#' 처리
+  function productLink(p){
+    return p.link || '#';
+  }
 
   function cardHTML(p, i, rank){
+    const imgs = productImages(p, i);
+    const multi = imgs.length > 1;
     return `
-    <div class="card">
+    <a class="card" href="${productLink(p)}">
       <div class="thumb">
         ${rank ? `<span class="rank-badge">${i+1}</span>` : ''}
-        <!-- 교체: <img src="[GitHub raw 이미지 URL]"> -->
-        <img src="https://placehold.co/600x600/${p.color}?font=noto-sans&text=PRODUCT+${String(i+1).padStart(2,'0')}" alt="${p.name}">
+        <!-- 교체: 아래 img들의 src를 GitHub raw 이미지 URL로 교체 (최대 5장) -->
+        ${imgs.map((src,idx)=>`<img src="${src}" class="${idx===0?'active':''}" alt="${p.name}">`).join('')}
+        ${multi ? `
+          <div class="thumb-nav prev" onclick="event.preventDefault();event.stopPropagation();thumbNav(this,-1)">${arrowPrev}</div>
+          <div class="thumb-nav next" onclick="event.preventDefault();event.stopPropagation();thumbNav(this,1)">${arrowNext}</div>
+          <div class="thumb-dots">${imgs.map((_,idx)=>`<i class="${idx===0?'active':''}"></i>`).join('')}</div>
+        ` : ''}
       </div>
-      <div class="wish">${wishIcon}</div>
+      <div class="wish" onclick="event.preventDefault();event.stopPropagation();">${wishIcon}</div>
       <div class="card-name">${p.name}</div>
       <div class="price-line">
         ${p.discount ? `
@@ -336,22 +375,46 @@
       </div>
       ${p.ship ? `<div class="ship">${shipIcon}택배 ${p.ship}</div>` : `<div class="ship">${shipIcon}무료배송</div>`}
       <div class="tags">${p.tags.map(t=>`<span>#${t}</span>`).join('')}</div>
-    </div>`;
+    </a>`;
   }
+
+  // 썸네일 좌우 넘김 (hover 시에만 보이는 버튼에서 호출)
+  function thumbNav(btn, dir){
+    const thumb = btn.closest('.thumb');
+    const imgs = thumb.querySelectorAll('img');
+    const dots = thumb.querySelectorAll('.thumb-dots i');
+    let idx = Array.from(imgs).findIndex(img => img.classList.contains('active'));
+    imgs[idx].classList.remove('active');
+    dots[idx] && dots[idx].classList.remove('active');
+    idx = (idx + dir + imgs.length) % imgs.length;
+    imgs[idx].classList.add('active');
+    dots[idx] && dots[idx].classList.add('active');
+  }
+
   function mCardHTML(p, i){
+    const imgs = productImages(p, i);
     return `
-    <div class="m-card">
+    <a class="m-card" href="${productLink(p)}">
       <div class="thumb">
-        <!-- 교체: <img src="[GitHub raw 이미지 URL]"> -->
-        <img src="https://placehold.co/600x600/${p.color}?font=noto-sans&text=PRODUCT+${String(i+1).padStart(2,'0')}" alt="${p.name}">
+        <!-- 교체: <img src="[GitHub raw 이미지 URL]"> (모바일은 대표이미지 1장만 사용) -->
+        <img src="${imgs[0]}" class="active" alt="${p.name}">
       </div>
       <div class="name">${p.name}</div>
       <div>${p.discount ? `<span class="discount">${p.discount}</span>`:''}<span class="price">${p.price}원</span></div>
-    </div>`;
+    </a>`;
   }
 
   const newProducts = [
-    {name:'로홈 드레스룸 인테리어 시스템장 시스템 옷장 수납장 옷방 안방 화이트 10cm', price:'10,700', tags:['드레스룸수납장','드레스룸행거'], color:'F5F5F5/141414'},
+    {name:'로홈 드레스룸 인테리어 시스템장 시스템 옷장 수납장 옷방 안방 화이트 10cm', price:'10,700', tags:['드레스룸수납장','드레스룸행거'], color:'F5F5F5/141414',
+      // 썸네일 최대 5장 등록 예시: images 배열에 순서대로 넣으면 카드에서 마우스오버 화살표로 넘겨볼 수 있음
+      images:[
+        'https://raw.githubusercontent.com/violett1106/LOHOME/main/images/new1_1.jpg',
+        'https://raw.githubusercontent.com/violett1106/LOHOME/main/images/new1_2.jpg',
+        'https://raw.githubusercontent.com/violett1106/LOHOME/main/images/new1_3.jpg',
+      ],
+      // 카드 클릭 시 이동할 상세페이지 주소 (실제 상세페이지 URL로 교체)
+      link:'https://smartstore.naver.com/lohome_/products/0000000001'
+    },
     {name:'로홈 아키 1200 책상 c자 학생 공부 사무용 홈오피스 데스크 테이블 서재', price:'89,000', tags:['1200책상','학생책상','서재책상'], color:'EDEDED/141414'},
     {name:'로홈 브리드 수납 옷장 800 키큰 멀티 작은방 학생 원룸 서랍장 여닫이 1인', price:'149,000', origin:'290,000', discount:'48%', ship:'50,000원', tags:['여닫이옷장','옷장수납','선반옷장'], color:'F0EDE5/141414'},
     {name:'로홈 브로디 히든 무몰딩 붙박이장 30cm PET 여닫이 안방 옷방 수납장', price:'99,000', tags:['붙박이수납장','이단이장','안방옷장'], color:'F5F5F5/141414'},
