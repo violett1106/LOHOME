@@ -368,19 +368,21 @@
 
   /* ===== PC 배너 (1920x400 · 별도 등록) ===== */
   const GH = 'https://raw.githubusercontent.com/violett1106/LOHOME/main/images/';
+  const GH_CDN = 'https://cdn.jsdelivr.net/gh/violett1106/LOHOME@main/images/'; // raw.githubusercontent.com 로드 실패시 대체 CDN
+  const V = '?v=' + Date.now(); // 캐시 무효화용
   const pcBanners = [
-    {img: GH + 'n_bnrPC.png'},
-    {img: GH + 'n_bnrPC1.jpg'},
-    {img: GH + 'n_bnrPC2.jpg'},
-    {img: GH + 'n_bnrPC3.jpg'},
-    {img: GH + 'n_bnrPC4.jpg'},
+    {img: GH + 'n_bnrPC.png' + V, fallback: GH_CDN + 'n_bnrPC.png'},
+    {img: GH + 'n_bnrPC1.jpg' + V, fallback: GH_CDN + 'n_bnrPC1.jpg'},
+    {img: GH + 'n_bnrPC2.jpg' + V, fallback: GH_CDN + 'n_bnrPC2.jpg'},
+    {img: GH + 'n_bnrPC3.jpg' + V, fallback: GH_CDN + 'n_bnrPC3.jpg'},
+    {img: GH + 'n_bnrPC4.jpg' + V, fallback: GH_CDN + 'n_bnrPC4.jpg'},
   ];
   const track = document.getElementById('bannerTrack');
   // 교체: pcBanners[n].img 를 GitHub raw 이미지 URL로 교체
   track.innerHTML = pcBanners.map(b => `
     <div class="banner-slide">
       ${b.badge ? `<div class="banner-badge">${b.badge}</div>` : ''}
-      <img src="${b.img}" alt="PC 배너">
+      <img src="${b.img}" onerror="this.onerror=null;this.src='${b.fallback}';" alt="PC 배너">
     </div>`).join('');
 
   const dotsWrap = document.getElementById('bannerDots');
@@ -397,16 +399,16 @@
 
   /* ===== 모바일 배너 (750x400 · PC와 별도 등록) ===== */
   const mobileBanners = [
-    GH + 'n_bnr.png',
-    GH + 'mbnr1.jpg',
-    GH + 'mbnr2.jpg',
-    GH + 'mbnr3.jpg',
-    GH + 'mbnr4.jpg',
+    {img: GH + 'n_bnr.png' + V, fallback: GH_CDN + 'n_bnr.png'},
+    {img: GH + 'mbnr1.jpg' + V, fallback: GH_CDN + 'mbnr1.jpg'},
+    {img: GH + 'mbnr2.jpg' + V, fallback: GH_CDN + 'mbnr2.jpg'},
+    {img: GH + 'mbnr3.jpg' + V, fallback: GH_CDN + 'mbnr3.jpg'},
+    {img: GH + 'mbnr4.jpg' + V, fallback: GH_CDN + 'mbnr4.jpg'},
   ];
   const mTrack = document.getElementById('mBannerTrack');
   const mCounter = document.getElementById('mBannerCounter');
-  // 교체: mobileBanners[n] 을 GitHub raw 모바일 전용 이미지 URL로 교체
-  mTrack.innerHTML = mobileBanners.map(src => `<div class="m-banner-slide"><img src="${src}" alt="모바일 배너"></div>`).join('');
+  // 교체: mobileBanners[n].img 를 GitHub raw 모바일 전용 이미지 URL로 교체
+  mTrack.innerHTML = mobileBanners.map(b => `<div class="m-banner-slide"><img src="${b.img}" onerror="this.onerror=null;this.src='${b.fallback}';" alt="모바일 배너"></div>`).join('');
   let mIdx = 0, mTimer;
   function mRender(){ mTrack.style.transform = `translateX(-${mIdx*100}%)`; mTrack.style.transition='transform .5s ease'; mCounter.textContent = `${mIdx+1}/${mobileBanners.length}`; }
   function mMoveSlide(dir){ mIdx=(mIdx+dir+mobileBanners.length)%mobileBanners.length; mRender(); mResetTimer(); }
