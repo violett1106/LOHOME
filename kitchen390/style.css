@@ -64,3 +64,17 @@
   .carousel-dots{bottom:13px}
   .package-carousel .visual-tag{left:15px;bottom:50px;padding:7px 11px;font-size:11px}
 }
+
+
+/* Value-difference emphasis */
+.saving-value strong{white-space:nowrap}
+.featured-difference{
+  margin-top:12px!important;
+  color:var(--dark)!important;
+  font-size:12px!important;
+  font-weight:650;
+}
+@media(max-width:700px){
+  .saving-value span{max-width:290px;text-align:center;line-height:1.65}
+  .featured-difference{font-size:11px!important}
+}
