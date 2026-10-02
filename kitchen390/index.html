@@ -411,6 +411,17 @@
   }
 }
 
+
+/* Hero autoplay carousel */
+.hero-main-carousel{position:relative}
+.hero-main-carousel .carousel-slide{transition:opacity .65s ease}
+.hero-main-carousel .carousel-slide img{width:100%;height:100%;object-fit:cover}
+.hero-main-carousel .carousel-dots{bottom:18px}
+.hero-main-carousel .carousel-arrow{opacity:.92}
+@media(max-width:700px){
+  .hero-main-carousel .carousel-dots{bottom:12px}
+}
+
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 </head>
@@ -440,8 +451,23 @@
     <p class="small">서울·인천·경기 무료 실측·배송·설치<br>온라인 결제 후 방문 실측 · 철거비 별도</p>
   </div>
 
-  <figure>
-    <img src="../images/360main.png" alt="키큰장과 냉장고장을 포함한 로홈 노앙 ㄱ자 주방">
+  <figure class="hero-main-carousel package-carousel" data-carousel data-autoplay="3000">
+    <div class="carousel-track">
+      <div class="carousel-slide is-active"><img src="../images/360main.png" alt="키큰장과 냉장고장을 포함한 로홈 노앙 ㄱ자 주방"></div>
+      <div class="carousel-slide"><img src="../images/kitchen390-1.png" alt="로홈 노앙 ㄱ자 주방 이미지 1"></div>
+      <div class="carousel-slide"><img src="../images/kitchen390-2.png" alt="로홈 노앙 ㄱ자 주방 이미지 2"></div>
+      <div class="carousel-slide"><img src="../images/kitchen390-3.png" alt="로홈 노앙 ㄱ자 주방 이미지 3"></div>
+      <div class="carousel-slide"><img src="../images/kitchen390-4.png" alt="로홈 노앙 ㄱ자 주방 이미지 4"></div>
+    </div>
+    <button class="carousel-arrow prev" type="button" aria-label="이전 메인 이미지">‹</button>
+    <button class="carousel-arrow next" type="button" aria-label="다음 메인 이미지">›</button>
+    <div class="carousel-dots" aria-label="메인 이미지 선택">
+      <button class="is-active" type="button" aria-label="1번 메인 이미지"></button>
+      <button type="button" aria-label="2번 메인 이미지"></button>
+      <button type="button" aria-label="3번 메인 이미지"></button>
+      <button type="button" aria-label="4번 메인 이미지"></button>
+      <button type="button" aria-label="5번 메인 이미지"></button>
+    </div>
   </figure>
   <p class="hero-caption">ㄱ자형 구성 예시 · 냉장고 본체 제외 · 기본 쿡탑은 3구 가스쿡탑</p>
 </section>
@@ -743,12 +769,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const next = carousel.querySelector('.carousel-arrow.next');
     let index = 0;
     let touchStartX = 0;
+    let autoplayTimer = null;
+    const autoplayDelay = Number(carousel.dataset.autoplay || 0);
 
-    function showSlide(newIndex) {
+    function startAutoplay() {
+      if (!autoplayDelay || slides.length < 2) return;
+      clearInterval(autoplayTimer);
+      autoplayTimer = setInterval(() => showSlide(index + 1, false), autoplayDelay);
+    }
+
+    function resetAutoplay() {
+      if (!autoplayDelay) return;
+      clearInterval(autoplayTimer);
+      startAutoplay();
+    }
+
+    function showSlide(newIndex, reset = true) {
       if (!slides.length) return;
       index = (newIndex + slides.length) % slides.length;
       slides.forEach((slide, i) => slide.classList.toggle('is-active', i === index));
       dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
+      if (reset) resetAutoplay();
     }
 
     prev?.addEventListener('click', e => {
@@ -779,7 +820,14 @@ document.addEventListener('DOMContentLoaded', () => {
       showSlide(distance < 0 ? index + 1 : index - 1);
     }, { passive: true });
 
-    showSlide(0);
+    showSlide(0, false);
+    startAutoplay();
+
+    document.addEventListener('visibilitychange', () => {
+      if (!autoplayDelay) return;
+      if (document.hidden) clearInterval(autoplayTimer);
+      else startAutoplay();
+    });
   }
 
   function activateTab(tab) {
