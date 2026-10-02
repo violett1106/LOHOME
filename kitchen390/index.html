@@ -10,744 +10,356 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#fbfaf7;
-  --paper:#fff;
-  --ink:#20211f;
-  --muted:#76786f;
-  --line:#e9e6de;
-  --green:#7b963b;
-  --green-dark:#5f782d;
-  --green-soft:#f1f5e8;
-  --beige:#f3eee5;
-  --max:1080px;
+  --bg:#faf9f6;
+  --paper:#ffffff;
+  --ink:#21221f;
+  --muted:#777970;
+  --line:#e8e5de;
+  --olive:#78953b;
+  --olive-dark:#5f772d;
+  --olive-soft:#f0f4e8;
+  --beige:#f5f0e8;
+  --max:1120px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  color:var(--ink);
   background:var(--bg);
+  color:var(--ink);
   font-family:Inter,"Noto Sans KR",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",sans-serif;
   letter-spacing:-.035em;
   -webkit-font-smoothing:antialiased;
 }
-a{color:inherit;text-decoration:none}
+a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
-.wrap{width:min(var(--max),calc(100% - 48px));margin:0 auto}
+.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
 
-/* HEADER */
-header{
-  height:82px;
-  border-bottom:1px solid #efede7;
-  background:rgba(251,250,247,.96);
-  display:flex;
-  align-items:center;
-  position:sticky;
-  top:0;
-  z-index:20;
-  backdrop-filter:blur(12px);
-}
-.header-inner{
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  align-items:center;
-}
-.logo{
-  font-size:21px;
-  line-height:.9;
-  font-weight:800;
-  letter-spacing:.14em;
-}
-.logo small{
-  display:block;
-  margin-top:7px;
-  font-size:7px;
-  letter-spacing:.1em;
-}
-nav{
-  display:flex;
-  gap:40px;
-  font-size:11px;
-  font-weight:600;
-  color:#4f514c;
-}
-nav a:hover{color:var(--green-dark)}
-.top-btn{
-  justify-self:end;
-  border:1px solid #dad7cf;
-  border-radius:999px;
-  background:#fff;
-  padding:9px 17px;
-  font-size:10px;
-  font-weight:700;
-}
+/* header */
+.site-header{height:78px;border-bottom:1px solid #eeece6;background:var(--bg)}
+.header-inner{height:100%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.logo{font-size:20px;font-weight:800;letter-spacing:.14em;line-height:.88}
+.logo small{display:block;margin-top:7px;font-size:6px;letter-spacing:.08em}
+.main-nav{display:flex;align-items:center;gap:38px;font-size:10px;font-weight:600}
+.header-btn{justify-self:end;padding:8px 16px;border:1px solid #dfddd6;border-radius:999px;background:#fff;font-size:9px;font-weight:600}
 
-/* HERO */
-.hero{padding:70px 0 112px}
-.hero-grid{
-  display:grid;
-  grid-template-columns:.92fr 1.36fr;
-  gap:54px;
-  align-items:center;
-}
-.eyebrow{
-  color:var(--green-dark);
-  font-size:8px;
-  font-weight:800;
-  letter-spacing:.22em;
-  margin-bottom:22px;
-}
-h1{
-  margin:0 0 24px;
-  font-size:47px;
-  line-height:1.23;
-  letter-spacing:-.06em;
-  font-weight:800;
-}
-.hero-sub{
-  color:#787a74;
-  font-size:13px;
-  line-height:1.8;
-}
-.hero-rule{
-  border-top:1px solid var(--line);
-  margin-top:26px;
-  padding-top:19px;
-}
-.hero-key{
-  margin:0 0 9px;
-  color:#667541;
-  font-size:11px;
-  font-weight:700;
-}
-.price{
-  margin-top:6px;
-  font-size:45px;
-  font-weight:800;
-  line-height:1;
-  letter-spacing:-.055em;
-}
-.price small{font-size:14px;margin-left:4px}
-.main-btn{
-  display:inline-block;
-  margin-top:22px;
-  padding:14px 27px;
-  border-radius:4px;
-  background:var(--green);
-  color:#fff;
-  font-size:11px;
-  font-weight:800;
-}
-.hero-note{
-  margin-top:12px;
-  color:#999b95;
-  font-size:8px;
-  line-height:1.65;
-}
-.hero-photo{position:relative}
-.hero-photo img{
-  width:100%;
-  aspect-ratio:1.48/1;
-  object-fit:cover;
-  border:1px solid #e7e3da;
-  border-radius:16px;
-  background:#eee;
-}
-.caption{
-  position:absolute;
-  right:0;
-  bottom:-27px;
-  color:#999b95;
-  font-size:7px;
-}
+/* hero */
+.hero{padding:66px 0 122px}
+.hero-grid{display:grid;grid-template-columns:390px 1fr;gap:60px;align-items:center}
+.eyebrow{margin-bottom:20px;color:var(--olive-dark);font-size:7px;font-weight:800;letter-spacing:.22em}
+.hero h1{margin:0 0 23px;font-size:39px;line-height:1.28;letter-spacing:-.06em;font-weight:800}
+.hero-desc{font-size:11px;line-height:1.85;color:#7d7f78}
+.hero-rule{margin-top:26px;padding-top:19px;border-top:1px solid var(--line)}
+.hero-point{margin:0 0 10px;color:#657342;font-size:10px;font-weight:700}
+.hero-price{font-size:41px;line-height:1;font-weight:800;letter-spacing:-.055em}
+.hero-price small{font-size:12px;margin-left:4px}
+.hero-cta{display:inline-block;margin-top:19px;padding:12px 23px;border-radius:3px;background:var(--olive);color:#fff;font-size:10px;font-weight:800}
+.hero-note{margin-top:11px;font-size:7px;line-height:1.7;color:#999b95}
+.hero-media{position:relative}
+.hero-media img{width:100%;height:auto;aspect-ratio:1.42/1;object-fit:cover;border-radius:13px;border:1px solid #e6e2da;background:#eee}
+.hero-caption{position:absolute;right:0;bottom:-24px;color:#969891;font-size:6px}
 
-/* SECTIONS */
-.section{padding:104px 0}
-.section-head{
-  max-width:720px;
-  margin:0 auto 43px;
-  text-align:center;
-}
-.section-head .eyebrow{margin-bottom:15px}
-.section-head h2{
-  margin:0 0 14px;
-  font-size:33px;
-  line-height:1.32;
-  letter-spacing:-.055em;
-}
-.section-head p{
-  margin:0;
-  color:#777a74;
-  font-size:12px;
-  line-height:1.75;
-}
-.saving{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:12px;
-  margin-top:25px;
-}
-.saving strong{
-  padding:9px 14px;
-  border-radius:3px;
-  background:var(--green-soft);
-  color:var(--green-dark);
-  font-size:11px;
-}
-.saving span{
-  color:#75786f;
-  font-size:10px;
-}
+/* common section */
+.section{padding:92px 0 100px}
+.section-head{max-width:680px;margin:0 auto 40px;text-align:center}
+.section-head .eyebrow{margin-bottom:13px}
+.section-head h2{margin:0 0 13px;font-size:29px;line-height:1.33;letter-spacing:-.055em}
+.section-head p{margin:0;font-size:10px;line-height:1.8;color:#7a7c75}
+.saving{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:22px}
+.saving strong{padding:8px 12px;border-radius:2px;background:var(--olive-soft);color:var(--olive-dark);font-size:9px}
+.saving span{font-size:8px;color:#777970}
 
-/* COMPARE */
-.compare-head,.compare-row{
-  display:grid;
-  grid-template-columns:1.1fr .58fr .55fr 1.55fr;
-  gap:22px;
-  align-items:center;
-}
-.compare-head{
-  padding:0 27px 11px;
-  color:#8a8c85;
-  font-size:8px;
-}
-.compare-row{
-  min-height:112px;
-  margin-bottom:11px;
-  padding:27px;
-  border:1px solid #ebe8e1;
-  border-radius:10px;
-  background:#fff;
-}
-.compare-row.hot{
-  border:1.5px solid var(--green);
-  background:#f4f7eb;
-}
-.pick{
-  display:inline-block;
-  margin-bottom:11px;
-  padding:4px 7px;
-  border-radius:2px;
-  background:var(--green);
-  color:#fff;
-  font-size:6px;
-  letter-spacing:.08em;
-}
-.brand b{font-size:17px}
-.brand small{
-  display:block;
-  margin-top:7px;
-  color:#7d8079;
-  font-size:8px;
-}
-.compare-price{
-  font-size:22px;
-  font-weight:800;
-}
-.compare-price small{font-size:9px}
-.length b,.detail b{
-  display:block;
-  margin-bottom:6px;
-  font-size:10px;
-}
-.length span,.detail span{
-  color:#7a7d76;
-  font-size:8px;
-  line-height:1.65;
-}
-.chips{
-  display:flex;
-  flex-wrap:wrap;
-  gap:5px;
-  margin-top:7px;
-}
-.chip{
-  padding:3px 5px;
-  border:1px solid #d5d8cb;
-  border-radius:2px;
-  background:#fff;
-  color:#60635c;
-  font-size:6px;
-}
-.disclaimer{
-  margin-top:15px;
-  color:#969890;
-  font-size:7px;
-  line-height:1.8;
-}
+/* compare */
+.compare-shell{max-width:920px;margin:0 auto}
+.compare-head,.compare-row{display:grid;grid-template-columns:1.05fr .56fr .56fr 1.45fr;gap:18px;align-items:center}
+.compare-head{padding:0 20px 9px;color:#8e9089;font-size:7px}
+.compare-row{min-height:96px;margin-bottom:9px;padding:22px 20px;border:1px solid #ece9e2;border-radius:8px;background:#fff}
+.compare-row.featured{border:1.25px solid var(--olive);background:#f0f4e8}
+.badge{display:inline-block;margin-bottom:8px;padding:4px 6px;border-radius:2px;background:var(--olive);color:#fff;font-size:5px;letter-spacing:.08em}
+.brand b{display:block;font-size:13px}
+.brand small{display:block;margin-top:5px;font-size:7px;color:#7a7d76}
+.c-price{font-size:20px;font-weight:800}
+.c-price small{font-size:8px;margin-left:2px}
+.length b,.detail b{display:block;margin-bottom:5px;font-size:8px}
+.length span,.detail span{font-size:7px;line-height:1.65;color:#777a73}
+.chips{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px}
+.chip{padding:2px 4px;border:1px solid #d6d9ce;border-radius:2px;background:#fff;font-size:5px;color:#62645e}
+.disclaimer{margin:12px 0 0;font-size:6px;line-height:1.8;color:#9a9c96}
 
-/* DIRECT */
-.direct{background:var(--beige)}
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:17px;
-}
-.card{
-  min-height:245px;
-  padding:29px;
-  border-radius:7px;
-  background:#fff;
-}
-.card-num{
-  text-align:right;
-  color:#999;
-  font-size:7px;
-}
-.card h3{
-  margin:21px 0 24px;
-  color:var(--green-dark);
-  font-size:24px;
-  letter-spacing:-.04em;
-}
-.card b{
-  display:block;
-  margin-bottom:9px;
-  font-size:13px;
-}
-.card p{
-  margin:0;
-  color:#7a7d77;
-  font-size:9px;
-  line-height:1.75;
-}
-.card-foot{
-  margin-top:28px;
-  color:var(--green-dark);
-  font-size:7px;
-}
-.direct-copy{
-  margin-top:40px;
-  text-align:center;
-  font-size:12px;
-  line-height:1.8;
-}
-.direct-copy b{font-size:14px}
+/* direct */
+.direct{background:var(--beige);padding:88px 0 96px}
+.cards{max-width:920px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.card{min-height:215px;padding:25px 25px 23px;border-radius:6px;background:#fff}
+.card-num{text-align:right;color:#aaa;font-size:6px}
+.card h3{margin:18px 0 22px;color:var(--olive-dark);font-size:21px;letter-spacing:-.04em}
+.card b{display:block;margin-bottom:8px;font-size:11px}
+.card p{margin:0;color:#797b75;font-size:8px;line-height:1.75}
+.card-foot{margin-top:25px;color:var(--olive-dark);font-size:6px}
+.direct-copy{margin-top:34px;text-align:center;font-size:10px;line-height:1.8}
+.direct-copy b{font-size:12px}
 
-/* PRODUCT */
-.products{background:#fff}
-.tabs{
-  width:470px;
-  margin:29px auto 27px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  padding:3px;
-  border-radius:5px;
-  background:#f0ede7;
-}
-.tab{
-  padding:11px;
-  text-align:center;
-  font-size:10px;
-  font-weight:700;
-}
-.tab.on{
-  border-radius:3px;
-  background:var(--green);
-  color:#fff;
-}
-.product{
-  max-width:850px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1.1fr 1fr;
-  overflow:hidden;
-  border:1px solid var(--line);
-  border-radius:9px;
-  background:#fff;
-}
-.product-visual{position:relative}
-.product-visual img{
-  width:100%;
-  height:100%;
-  min-height:420px;
-  object-fit:cover;
-  background:#eee;
-}
-.photo-tag{
-  position:absolute;
-  left:18px;
-  bottom:18px;
-  padding:8px 11px;
-  border-radius:3px;
-  background:rgba(255,255,255,.94);
-  font-size:8px;
-}
-.product-info{padding:35px 33px}
-.product-info h3{
-  margin:0 0 6px;
-  font-size:24px;
-}
-.tiny{color:#8a8d86;font-size:9px}
-.product-price{
-  margin:25px 0 8px;
-  color:var(--green-dark);
-  font-size:34px;
-  font-weight:800;
-}
-.product-price small{
-  color:#30322d;
-  font-size:11px;
-}
-.dim{
-  padding-bottom:20px;
-  border-bottom:1px solid var(--line);
-  color:#555;
-  font-size:8px;
-  line-height:1.65;
-}
-.checks{
-  margin:20px 0 25px;
-  padding:0;
-  list-style:none;
-}
-.checks li{
-  font-size:9px;
-  line-height:2;
-}
-.checks li:before{
-  content:"✓";
-  margin-right:8px;
-  color:var(--green);
-  font-weight:800;
-}
-.store-btn{
-  display:block;
-  padding:13px;
-  border-radius:3px;
-  background:var(--green);
-  color:#fff;
-  text-align:center;
-  font-size:10px;
-  font-weight:800;
-}
-
-/* SPECS */
-.specs{
-  max-width:850px;
-  margin:22px auto 0;
-  border-top:1px solid var(--line);
-}
-.spec-title,.accordion{
-  display:flex;
-  justify-content:space-between;
-  padding:18px 0 15px;
-  font-size:11px;
-  font-weight:700;
-}
-.spec-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-  padding-bottom:20px;
-  border-bottom:1px solid var(--line);
-}
-.spec b{
-  display:block;
-  margin-bottom:6px;
-  color:#999;
-  font-size:8px;
-}
-.spec span{font-size:9px}
+/* products */
+.products{padding:88px 0 72px;background:var(--bg)}
+.tabs{width:405px;margin:26px auto 24px;display:grid;grid-template-columns:1fr 1fr;padding:2px;border-radius:4px;background:#efede7}
+.tab{padding:10px;text-align:center;font-size:8px;font-weight:700}
+.tab.active{border-radius:3px;background:var(--olive);color:#fff}
+.product-card{max-width:920px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;overflow:hidden;border:1px solid var(--line);border-radius:8px;background:#fff}
+.product-photo{position:relative;background:#eee}
+.product-photo img{width:100%;height:100%;min-height:390px;object-fit:cover}
+.photo-tag{position:absolute;left:16px;bottom:16px;padding:7px 10px;border-radius:3px;background:rgba(255,255,255,.94);font-size:7px}
+.product-info{padding:31px 30px}
+.product-info .eyebrow{margin-bottom:13px}
+.product-info h3{margin:0 0 5px;font-size:21px}
+.product-sub{font-size:8px;color:#8a8c86}
+.product-price{margin:20px 0 7px;color:var(--olive-dark);font-size:31px;font-weight:800}
+.product-price small{font-size:10px;color:#2f312d}
+.product-dim{padding-bottom:18px;border-bottom:1px solid var(--line);font-size:7px;line-height:1.65;color:#555}
+.checks{margin:17px 0 21px;padding:0;list-style:none}
+.checks li{font-size:8px;line-height:1.95}
+.checks li:before{content:"✓";margin-right:7px;color:var(--olive);font-weight:800}
+.store-btn{display:block;padding:12px;border-radius:3px;background:var(--olive);color:#fff;text-align:center;font-size:9px;font-weight:800}
+.specs{max-width:920px;margin:19px auto 0;border-top:1px solid var(--line)}
+.spec-title,.accordion{display:flex;justify-content:space-between;padding:15px 0 13px;font-size:9px;font-weight:700}
+.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.spec b{display:block;margin-bottom:5px;color:#999;font-size:7px}
+.spec span{font-size:8px}
 .accordion{border-bottom:1px solid var(--line)}
 
-/* FOOTER */
-footer{
-  margin-top:66px;
-  padding:52px 0 33px;
-  border-top:1px solid var(--line);
-}
-.footer-inner{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-end;
-}
-.footer-logo{
-  font-size:17px;
-  font-weight:800;
-  letter-spacing:.13em;
-}
-.footer-copy,.footer-right{
-  color:#989a94;
-  font-size:7px;
-}
-.footer-copy{margin-left:22px}
+/* footer */
+footer{margin-top:40px;padding:36px 0 28px;border-top:1px solid var(--line)}
+.footer-inner{display:flex;align-items:flex-end;justify-content:space-between}
+.footer-logo{font-size:14px;font-weight:800;letter-spacing:.12em}
+.footer-copy,.footer-right{font-size:6px;color:#999b95}
+.footer-copy{margin-left:18px}
 
-/* MOBILE */
-@media(max-width:800px){
+/* responsive */
+@media(max-width:860px){
   .wrap{width:min(100% - 28px,var(--max))}
-  header{height:62px}
+  .site-header{height:62px}
   .header-inner{grid-template-columns:1fr auto}
-  nav{display:none}
+  .main-nav{display:none}
   .logo{font-size:17px}
-  .top-btn{padding:8px 11px;font-size:9px}
+  .header-btn{padding:7px 11px;font-size:8px}
 
-  .hero{padding:26px 0 68px}
+  .hero{padding:28px 0 66px}
   .hero-grid{grid-template-columns:1fr;gap:28px}
-  .hero-photo{order:-1}
-  .hero-photo img{aspect-ratio:1.22/1;border-radius:13px}
-  .caption{position:static;margin-top:7px;text-align:right}
-  h1{font-size:37px}
-  .hero-sub{font-size:12px}
+  .hero-media{order:-1}
+  .hero-media img{aspect-ratio:1.28/1;border-radius:12px}
+  .hero-caption{position:static;margin-top:6px;text-align:right}
+  .hero h1{font-size:34px}
+  .hero-desc{font-size:11px}
 
-  .section{padding:72px 0}
-  .section-head h2{font-size:27px}
-  .saving{align-items:flex-start;flex-direction:column;gap:7px}
+  .section{padding:68px 0 72px}
+  .section-head h2{font-size:26px}
+  .saving{align-items:flex-start;flex-direction:column;gap:6px}
 
   .compare-head{display:none}
-  .compare-row{
-    grid-template-columns:1fr 1fr;
-    gap:14px;
-    min-height:0;
-    padding:21px;
-  }
+  .compare-row{grid-template-columns:1fr 1fr;gap:13px;padding:19px;min-height:0}
   .detail{grid-column:1/-1}
-  .compare-price{text-align:right}
+  .c-price{text-align:right}
 
-  .cards{grid-template-columns:1fr;gap:11px}
+  .direct{padding:67px 0 72px}
+  .cards{grid-template-columns:1fr;gap:10px}
   .card{min-height:0}
 
   .tabs{width:100%}
-  .product{grid-template-columns:1fr}
-  .product-visual img{min-height:280px;max-height:360px}
-  .product-info{padding:27px 23px}
+  .product-card{grid-template-columns:1fr}
+  .product-photo img{min-height:270px;max-height:355px}
+  .product-info{padding:26px 22px}
   .spec-grid{grid-template-columns:1fr 1fr}
 
   .footer-inner{display:block}
-  .footer-right{margin-top:17px}
+  .footer-right{margin-top:16px}
+}
+
+@media(min-width:1500px){
+  :root{--max:1160px}
 }
 </style>
 </head>
 <body>
 
-<header>
+<header class="site-header">
   <div class="wrap header-inner">
     <div class="logo">LOHOME<small>FURNITURE FOR YOUR LIFE</small></div>
-    <nav>
+    <nav class="main-nav">
       <a href="#compare">브랜드 비교</a>
       <a href="#direct">로홈의 가격</a>
       <a href="#products">패키지 구성</a>
     </nav>
-    <a class="top-btn" href="#products">390 주방 보기</a>
+    <a class="header-btn" href="#products">390 주방 보기</a>
   </div>
 </header>
 
 <main>
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <div class="eyebrow">LOHOME NOHANT</div>
-        <h1>키큰장에 냉장고장까지.<br>주방 하나, 제대로.</h1>
-        <div class="hero-sub">수납부터 기본 기기까지 담은<br>로홈 노앙 ㄱ자 주방 패키지.</div>
-
-        <div class="hero-rule">
-          <p class="hero-key">키큰장 600mm + 냉장고장 1m 포함</p>
-          <p class="hero-key">주방 맞춤형 리모델링</p>
-          <div class="price">390<small>만원</small></div>
-          <a class="main-btn" href="#products">390 주방 구성 보기</a>
-          <div class="hero-note">서울·인천·경기 무료 실측·배송·설치<br>온라인 결제 후 방문 실측 · 철거비 별도</div>
-        </div>
-      </div>
-
-      <div class="hero-photo">
-        <img src="../images/kitchen390-main.png" alt="LOHOME 노앙 ㄱ자 주방">
-        <div class="caption">*이미지는 연출된 예시이며 실제 시공 환경에 따라 달라질 수 있습니다.</div>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">LOHOME NOHANT</div>
+      <h1>키큰장에 냉장고장까지.<br>주방 하나, 제대로.</h1>
+      <div class="hero-desc">수납부터 기본 기기까지 담은<br>로홈 노앙 ㄱ자 주방 패키지.</div>
+      <div class="hero-rule">
+        <p class="hero-point">키큰장 600mm + 냉장고장 1m 포함</p>
+        <p class="hero-point">주방 맞춤형 리모델링</p>
+        <div class="hero-price">390<small>만원</small></div>
+        <a class="hero-cta" href="#products">390 주방 구성 보기</a>
+        <div class="hero-note">서울·인천·경기 무료 실측·배송·설치<br>온라인 결제 후 방문 실측 · 철거비 별도</div>
       </div>
     </div>
-  </section>
+    <div class="hero-media">
+      <img src="../images/kitchen390-main.png" alt="LOHOME 노앙 ㄱ자 주방">
+      <div class="hero-caption">*제품 구성에 따라 실제 시공 이미지는 달라질 수 있습니다.</div>
+    </div>
+  </div>
+</section>
 
-  <section class="section" id="compare">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">01 / COMPARE</div>
-        <h2>키큰장과 냉장고장까지 포함해도,<br>가격은 최대 17.5% 낮게.</h2>
-        <p>20~30평대 ㄱ자 주방 · 구성과 가격을 함께 비교해보세요.</p>
-        <div class="saving">
-          <strong>최대 83만원 차이</strong>
-          <span>닥터싱크 스마트스토어 473만원 대비 로홈 390만원</span>
-        </div>
-      </div>
+<section class="section" id="compare">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">01 / COMPARE</div>
+      <h2>키큰장과 냉장고장까지 포함해도,<br>가격은 최대 17.5% 낮게.</h2>
+      <p>20~30평대 ㄱ자 주방 · 구성에서 합리적인 가격을 비교해보세요.</p>
+      <div class="saving"><strong>최대 83만원 차이</strong><span>닥터싱크 스마트스토어 473만원 대비 로홈 390만원</span></div>
+    </div>
 
+    <div class="compare-shell">
       <div class="compare-head">
-        <div>브랜드 / 패키지</div>
-        <div>판매가격</div>
-        <div>구성 길이</div>
-        <div>포함 구성 및 시공 조건</div>
+        <div>브랜드 / 패키지</div><div>판매가격</div><div>구성 길이</div><div>포함 구성 및 시공 조건</div>
       </div>
 
-      <div class="compare-row hot">
+      <div class="compare-row featured">
         <div class="brand">
-          <span class="pick">LOHOME PICK</span>
+          <span class="badge">LOHOME PICK</span>
           <b>로홈 노앙</b>
           <small>키큰장 + 냉장고장 포함</small>
         </div>
-        <div class="compare-price">390<small>만원</small></div>
-        <div class="length">
-          <b>총 5.9m 이하</b>
-          <span>주방·키큰장 약 4.9m<br>+ 냉장고장 1m</span>
-        </div>
+        <div class="c-price">390<small>만원</small></div>
+        <div class="length"><b>총 5.9m 이하</b><span>주방·키큰장 약 4.9m<br>+ 냉장고장 1m</span></div>
         <div class="detail">
           <b>키큰장 · 냉장고장 · 후드 · 쿡탑</b>
-          <span>수전 · 싱크볼 · 기본 악세사리 포함<br>무료 실측 · 배송/설치 무료 · 철거비 별도</span>
-          <div class="chips">
-            <span class="chip">냉장고장 포함</span>
-            <span class="chip">수납 강화</span>
-            <span class="chip">설치 무료</span>
-          </div>
+          <span>수전 · 싱크볼 · 기본 악세사리 포함<br>방문 실측 무료 · 배송·설치 무료 · 철거비 별도</span>
+          <div class="chips"><span class="chip">냉장고장 포함</span><span class="chip">수납 강화</span><span class="chip">설치 무료</span></div>
         </div>
       </div>
 
       <div class="compare-row">
-        <div class="brand">
-          <b>한샘</b>
-          <small>인생키친 슬림 · 키큰장형</small>
-        </div>
-        <div class="compare-price">399.23<small>만원</small></div>
+        <div class="brand"><b>한샘</b><small>인생키친 슬림 · 키큰장형</small></div>
+        <div class="c-price">399.23<small>만원</small></div>
         <div class="length"><b>5.3~5.8m 이하</b></div>
-        <div class="detail">
-          <b>키큰장형 · 쿡탑 · 후드</b>
-          <span>수전 · 싱크볼 포함<br>냉장고장 포함 여부는 판매 조건 별도 확인</span>
-        </div>
+        <div class="detail"><b>키큰장형 · 쿡탑 · 후드</b><span>수전 · 싱크볼 포함<br>냉장고장 포함 여부는 판매 조건 별도 확인</span></div>
       </div>
 
       <div class="compare-row">
-        <div class="brand">
-          <b>찬장주방</b>
-          <small>ㄱ자형 구성</small>
-        </div>
-        <div class="compare-price">385<small>만원</small></div>
+        <div class="brand"><b>찬장주방</b><small>ㄱ자형 구성</small></div>
+        <div class="c-price">385<small>만원</small></div>
         <div class="length"><b>5.5m</b></div>
-        <div class="detail">
-          <b>상·하부장 · 3단 서랍 · 후드 · 싱크볼</b>
-          <span>수전·쿡탑 추가 옵션 / 배송비 무료</span>
-        </div>
+        <div class="detail"><b>상·하부장 · 3단 서랍 · 후드 · 싱크볼</b><span>수전·쿡탑 추가 옵션 / 배송비 무료</span></div>
       </div>
 
       <div class="compare-row">
-        <div class="brand">
-          <b>닥터싱크</b>
-          <small>프리미엄 패키지</small>
-        </div>
-        <div class="compare-price">463<small>만원</small></div>
+        <div class="brand"><b>닥터싱크</b><small>프리미엄 패키지</small></div>
+        <div class="c-price">463<small>만원</small></div>
         <div class="length"><b>4.4m 이하</b></div>
-        <div class="detail">
-          <b>판매 채널별 가격 상이</b>
-          <span>공식몰 463만원 · 스마트스토어 473만원</span>
-        </div>
+        <div class="detail"><b>판매 채널별 가격 상이</b><span>공식몰 463만원 · 스마트스토어 473만원</span></div>
       </div>
 
-      <p class="disclaimer">2026.10.02 기준 · 업체별 판매 옵션과 길이, 포함 범위가 달라 동일 규격 견적 비교가 아닙니다. 로홈 총 길이는 냉장고장 합산 패키지 기준이며 실제 견적은 현장 조건에 따라 달라질 수 있습니다.</p>
+      <p class="disclaimer">2026.10.02 기준 · 업체별 판매 옵션과 주방 길이, 포함 범위가 달라 동일 규격 견적 비교가 아닙니다. 로홈 총 길이는 냉장고장 합산 패키지 기준이며 실제 견적은 현장 조건에 따라 달라질 수 있습니다.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section direct" id="direct">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">02 / DIRECT FROM LOHOME</div>
-        <h2>어떻게 이런 가격이<br>가능할까요?</h2>
-        <p>실측부터 제작, 시공까지. 로홈이 직접 이어갑니다.</p>
-      </div>
-
-      <div class="cards">
-        <div class="card">
-          <div class="card-num">01</div>
-          <h3>Measure</h3>
-          <b>전문가가 직접 실측</b>
-          <p>우리 집 구조와 생활 동선을 살펴<br>공간에 맞는 주방을 설계합니다.</p>
-          <div class="card-foot">서울·인천·경기 방문 실측 무료</div>
-        </div>
-
-        <div class="card">
-          <div class="card-num">02</div>
-          <h3>Make</h3>
-          <b>본사에서 직접 제작</b>
-          <p>외주 제작 없이 본사에서 만듭니다.<br>자재부터 마감까지 직접 관리합니다.</p>
-          <div class="card-foot">본사 직접 제작</div>
-        </div>
-
-        <div class="card">
-          <div class="card-num">03</div>
-          <h3>Install</h3>
-          <b>자체 전문팀이 시공</b>
-          <p>주방을 잘 아는 전문팀이<br>설치와 마무리까지 담당합니다.</p>
-          <div class="card-foot">배송·설치 무료 · 제품 하자 1년 무상 AS</div>
-        </div>
-      </div>
-
-      <div class="direct-copy">여러 곳을 거치지 않는 직접 운영.<br><b>필요한 구성은 담고, 가격은 합리적으로.</b></div>
+<section class="direct" id="direct">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">02 / DIRECT FROM LOHOME</div>
+      <h2>어떻게 이런 가격이<br>가능할까요?</h2>
+      <p>실측부터 제작, 시공까지. 로홈이 직접 이어갑니다.</p>
     </div>
-  </section>
 
-  <section class="section products" id="products">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">03 / YOUR KITCHEN</div>
-        <h2>우리 집에 맞는<br>주방을 골라보세요.</h2>
-        <p>기본형과 수납형 패키지, 선택은 나에게 맞게.</p>
+    <div class="cards">
+      <article class="card">
+        <div class="card-num">01</div>
+        <h3>Measure</h3>
+        <b>전문가가 직접 실측</b>
+        <p>우리 집 구조와 생활 동선을 살펴<br>공간에 맞는 주방을 설계합니다.</p>
+        <div class="card-foot">서울·인천·경기 방문 실측 무료</div>
+      </article>
+      <article class="card">
+        <div class="card-num">02</div>
+        <h3>Make</h3>
+        <b>본사에서 직접 제작</b>
+        <p>외주 제작 없이 본사에서 만듭니다.<br>자재부터 마감까지 직접 관리합니다.</p>
+        <div class="card-foot">본사 직접 제작</div>
+      </article>
+      <article class="card">
+        <div class="card-num">03</div>
+        <h3>Install</h3>
+        <b>자체 전문팀이 시공</b>
+        <p>주방을 잘 아는 로홈 전문팀이<br>설치와 마무리까지 담당합니다.</p>
+        <div class="card-foot">배송·설치 무료 · 제품 하자 1년 무상 AS</div>
+      </article>
+    </div>
+
+    <div class="direct-copy">여러 곳을 거치지 않는 직접 운영.<br><b>필요한 구성은 담고, 가격은 합리적으로.</b></div>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">03 / YOUR KITCHEN</div>
+      <h2>우리 집에 맞는<br>주방을 골라보세요.</h2>
+      <p>기본형과 수납형 패키지, 선택은 나에게 맞게.</p>
+    </div>
+
+    <div class="tabs">
+      <div class="tab">기본 맞춤형</div>
+      <div class="tab active">수납형 · 추천</div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-photo">
+        <img src="../images/kitchen390-main.png" alt="로홈 노앙 390 주방">
+        <span class="photo-tag">키큰장 + 냉장고장 포함</span>
       </div>
 
-      <div class="tabs">
-        <div class="tab">기본 맞춤형</div>
-        <div class="tab on">수납형 · 추천</div>
-      </div>
-
-      <div class="product">
-        <div class="product-visual">
-          <img src="../images/kitchen390-main.png" alt="로홈 노앙 390 주방">
-          <span class="photo-tag">키큰장 + 냉장고장 포함</span>
-        </div>
-
-        <div class="product-info">
-          <div class="eyebrow">NOHANT / L-SHAPE KITCHEN</div>
-          <h3>로홈 390 주방</h3>
-          <div class="tiny">주방 맞춤형 리모델링</div>
-          <div class="product-price">390<small>만원</small></div>
-          <div class="dim">총 5.9m 이하 기준<br>주방·키큰장 약 4.9m + 냉장고장 1m</div>
-
-          <ul class="checks">
-            <li>키큰장 600mm + 냉장고장 1m</li>
-            <li>상·하부장 + 3단 서랍장</li>
-            <li>싱크볼 + 입수전 + 3구 가스쿡탑</li>
-            <li>슬라이딩 슬림후드 G60AL</li>
-            <li>기본 악세사리 포함</li>
-            <li>서울·인천·경기 무료 실측 · 배송 · 설치</li>
-          </ul>
-
-          <a class="store-btn" href="https://brand.naver.com/lohome" target="_blank" rel="noopener">로홈 스토어 둘러보기</a>
-        </div>
-      </div>
-
-      <div class="specs">
-        <div class="spec-title">
-          <span>기본 소재와 마감</span>
-          <span>−</span>
-        </div>
-
-        <div class="spec-grid">
-          <div class="spec"><b>도어</b><span>18T E0 PB · 무광 PET</span></div>
-          <div class="spec"><b>몸통</b><span>15T E0 LPM</span></div>
-          <div class="spec"><b>상판</b><span>12T 인조대리석</span></div>
-          <div class="spec"><b>엣지</b><span>1mm PUR 엣지</span></div>
-          <div class="spec"><b>수납 하드웨어</b><span>언더레일 · 저압 댐퍼 경첩</span></div>
-          <div class="spec"><b>컬러 선택</b><span>무광 도어 9색 · 기본 상판 4종</span></div>
-        </div>
-
-        <div class="accordion">
-          <span>추가 옵션과 컬러 안내</span>
-          <span>＋</span>
-        </div>
+      <div class="product-info">
+        <div class="eyebrow">NOHANT / L-SHAPE KITCHEN</div>
+        <h3>로홈 390 주방</h3>
+        <div class="product-sub">주방 맞춤형 리모델링</div>
+        <div class="product-price">390<small>만원</small></div>
+        <div class="product-dim">총 5.9m 이하 기준<br>주방·키큰장 약 4.9m + 냉장고장 1m</div>
+        <ul class="checks">
+          <li>키큰장 600mm + 냉장고장 1m</li>
+          <li>상·하부장 + 3단 서랍장</li>
+          <li>싱크볼 + 입수전 + 3구 가스쿡탑</li>
+          <li>슬라이딩 슬림후드 G60AL</li>
+          <li>기본 악세사리 포함</li>
+          <li>서울·인천·경기 무료 실측 · 배송 · 설치</li>
+        </ul>
+        <a class="store-btn" href="https://brand.naver.com/lohome" target="_blank" rel="noopener">로홈 스토어 둘러보기</a>
       </div>
     </div>
-  </section>
+
+    <div class="specs">
+      <div class="spec-title"><span>기본 소재와 마감</span><span>−</span></div>
+      <div class="spec-grid">
+        <div class="spec"><b>도어</b><span>18T E0 PB · 무광 PET</span></div>
+        <div class="spec"><b>몸통</b><span>15T E0 LPM</span></div>
+        <div class="spec"><b>상판</b><span>12T 인조대리석</span></div>
+        <div class="spec"><b>엣지</b><span>1mm PUR 엣지</span></div>
+        <div class="spec"><b>수납 하드웨어</b><span>언더레일 · 저압 댐퍼 경첩</span></div>
+        <div class="spec"><b>컬러 선택</b><span>무광 도어 9색 · 기본 상판 4종</span></div>
+      </div>
+      <div class="accordion"><span>추가 옵션과 컬러 안내</span><span>＋</span></div>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer>
   <div class="wrap footer-inner">
-    <div>
-      <span class="footer-logo">LOHOME</span>
-      <span class="footer-copy">공간에 맞게, 생활에 가깝게.</span>
-    </div>
+    <div><span class="footer-logo">LOHOME</span><span class="footer-copy">공간에 맞게, 생활에 가깝게.</span></div>
     <div class="footer-right">주방 · 가구 · 주거 / NOHANT KITCHEN</div>
   </div>
 </footer>
