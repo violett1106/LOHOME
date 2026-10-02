@@ -27,3 +27,40 @@
 @media(max-width:700px){.hero-new{display:grid;grid-template-columns:1fr;padding:26px 20px 0;gap:12px}.hero-new .hero-copy{display:contents}.hero-new .eyebrow{order:0;margin:0 4px 2px;font-size:11px}.hero-new h1{order:1;font-size:32px;letter-spacing:-1.3px;line-height:1.36;margin:0 4px 5px}.hero-new .hero-lead{order:2;font-size:14px;line-height:1.7;margin:0 4px 9px}.hero-new .hero-lead br{display:none}.hero-new figure{order:3;height:340px;border-radius:16px;grid-column:1}.hero-caption{order:4;grid-column:1;text-align:left;font-size:10px;margin:0 2px}.hero-offer{order:5;margin:9px 4px 3px;padding-top:18px}.hero-offer>span{font-size:14px}.hero-offer>p{display:flex;align-items:center;justify-content:space-between;font-size:13px;gap:10px;margin:10px 0}.hero-offer strong{font-size:37px;white-space:nowrap}.hero-offer small{font-size:18px}.hero-new .button{order:6}.hero-new .small{order:7;font-size:10px;margin-top:2px}.saving{flex-direction:column;gap:9px;margin-top:22px}.saving strong{font-size:16px}.saving span{font-size:11px}.compare .section-head h2{font-size:27px}.brand.featured .included-emphasis{font-size:12px}.price-saving{font-size:10px}}
 
 .reason-cards .en{font-weight:750;letter-spacing:-.6px}
+
+
+/* Product image carousel */
+.package-carousel{overflow:hidden;isolation:isolate}
+.carousel-track{position:absolute;inset:0}
+.carousel-slide{position:absolute;inset:0;margin:0;opacity:0;visibility:hidden;transition:opacity .35s ease;pointer-events:none}
+.carousel-slide.is-active{opacity:1;visibility:visible;pointer-events:auto}
+.carousel-slide img{width:100%;height:100%;object-fit:cover}
+.carousel-slide.sketch-slide img{object-fit:contain;background:#f7f5f0;padding:18px}
+.carousel-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:5;
+  width:44px;height:44px;border:1px solid rgba(255,255,255,.55);
+  border-radius:999px;background:rgba(255,255,255,.68);
+  -webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);
+  color:#333;font-size:31px;line-height:1;display:flex;align-items:center;
+  justify-content:center;cursor:pointer;box-shadow:0 3px 14px rgba(0,0,0,.08);
+  transition:background .2s,transform .2s
+}
+.carousel-arrow:hover{background:rgba(255,255,255,.94)}
+.carousel-arrow.prev{left:18px}.carousel-arrow.next{right:18px}
+.carousel-dots{
+  position:absolute;z-index:5;left:50%;bottom:19px;transform:translateX(-50%);
+  display:flex;gap:7px;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.62);
+  -webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px)
+}
+.carousel-dots button{
+  width:6px;height:6px;padding:0;border:0;border-radius:50%;
+  background:rgba(79,100,42,.32);cursor:pointer;transition:width .2s,background .2s
+}
+.carousel-dots button.is-active{width:18px;border-radius:99px;background:var(--dark)}
+.package-carousel .visual-tag{z-index:6;bottom:25px}
+@media(max-width:700px){
+  .carousel-arrow{width:38px;height:38px;font-size:27px}
+  .carousel-arrow.prev{left:11px}.carousel-arrow.next{right:11px}
+  .carousel-dots{bottom:13px}
+  .package-carousel .visual-tag{left:15px;bottom:50px;padding:7px 11px;font-size:11px}
+}
