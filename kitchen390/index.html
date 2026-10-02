@@ -5,7 +5,413 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>LOHOME | 주방 맞춤형 리모델링 390만원</title>
 <meta name="description" content="로홈 노앙 ㄱ자 주방. 키큰장과 냉장고장까지 포함한 390만원 패키지를 만나보세요.">
-<link rel="stylesheet" href="style.css">
+<style>
+:root{--bg:#faf9f6;--section:#f5f0e8;--card:#fff;--border:#e6e2da;--text:#2b2b2b;--muted:#6f6f6f;--olive:#789441;--dark:#4f642a;--pale:#f0f4e8}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:16px;line-height:1.6;word-break:keep-all}a{color:inherit;text-decoration:none}button{font:inherit}button,a,summary{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--olive);outline-offset:5px}header{height:92px;display:flex;align-items:center;justify-content:space-between;max-width:1440px;padding:0 64px;margin:auto;gap:30px}.logo{font-size:29px;font-weight:700;letter-spacing:3px;line-height:1.2}.logo span{display:block;font-size:8px;letter-spacing:1.4px;margin-top:7px}nav{display:flex;gap:36px;font-size:14px}nav a:hover{color:var(--dark)}.nav-cta{font-size:14px;border:1px solid var(--border);border-radius:99px;padding:10px 20px}.hero{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:43% 57%;padding:22px 32px 0 64px;align-items:center;min-height:640px}.hero-copy{padding-right:24px;padding-bottom:35px}.eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;color:var(--dark);margin:0 0 22px}.hero h1{font-size:clamp(36px,3.8vw,56px);line-height:1.22;letter-spacing:-2.7px;margin:0 0 24px;font-weight:650}.hero h1 strong{display:block;color:var(--dark);font-size:1.4em;font-weight:650;margin-top:10px;letter-spacing:-4px}.hero h1 strong span{font-size:.45em;letter-spacing:-1px;margin-left:9px}.hero-lead{font-size:18px;color:#555;line-height:1.8}.hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}.hero-tags span{border:1px solid #d9decf;border-radius:99px;padding:5px 12px;font-size:12px;color:var(--dark)}.button{display:inline-flex;align-items:center;justify-content:center;background:var(--olive);color:white;border-radius:7px;min-height:54px;padding:14px 28px;font-weight:600;font-size:16px;transition:background .2s}.button:hover{background:var(--dark)}.small{font-size:12px;color:var(--muted);margin-top:14px}.hero figure{margin:0;position:relative;height:590px;overflow:hidden;border-radius:120px 8px 8px 8px;background:#e6e2da}.hero img{height:100%;width:100%;object-fit:cover}.hero figcaption{position:absolute;right:22px;bottom:20px;font-size:11px;color:white;text-align:right;text-shadow:0 1px 5px #000}.image-label{position:absolute;left:32px;top:26px;color:white;font-family:Georgia,serif;font-size:28px;line-height:1.25;text-shadow:0 1px 4px #555}.image-label em{font-size:23px}.section{max-width:1160px;margin:auto;padding:110px 32px}.section-head{text-align:center;margin-bottom:48px}.section-head .eyebrow{margin-bottom:18px}.section-head h2{font-size:38px;line-height:1.35;letter-spacing:-1.7px;font-weight:650;margin:0 0 19px}.section-head>p:last-child{color:var(--muted);margin:0}.compare-labels,.brand{display:grid;grid-template-columns:1.1fr .8fr 1fr 1.7fr;gap:18px;align-items:center}.compare-labels{padding:0 28px 13px;font-size:12px;color:var(--muted)}.brand{border:1px solid var(--border);border-radius:12px;background:white;padding:25px 28px;margin-bottom:12px;min-height:145px}.brand h3{font-size:20px;margin:0 0 4px;letter-spacing:-.5px}.brand p{font-size:13px;color:var(--muted);margin:2px 0}.brand.featured{border:2px solid var(--olive);background:var(--pale);padding:26px 27px;box-shadow:0 6px 22px #526a2310;min-height:200px}.pill{display:inline-block;font-size:10px;letter-spacing:1px;color:white;background:var(--olive);border-radius:4px;padding:3px 9px;margin-bottom:10px}.brand.featured h3{font-size:25px;color:var(--dark)}.price{font-size:29px;font-weight:700;letter-spacing:-1px;white-space:nowrap}.price small{font-size:14px;font-weight:500;margin-left:4px}.featured .price{color:var(--dark);font-size:42px}.length{font-size:16px;font-weight:600}.length small{font-size:12px;font-weight:400;color:var(--muted);display:block;margin-top:6px}.brand-detail b{font-size:14px;font-weight:600}.brand-detail>small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.benefit{display:inline-block;margin:9px 5px 0 0;background:#fff;border:1px solid #d8e2c9;border-radius:4px;color:var(--dark);font-size:11px;padding:3px 7px}.compare-note{font-size:12px;color:var(--muted);margin:20px 4px 10px;line-height:1.8}.sources{font-size:12px;color:var(--muted);padding:0 4px}.sources summary{cursor:pointer}.sources a{display:inline-block;text-decoration:underline;text-underline-offset:3px;margin-right:20px}.reason{background:var(--section)}.reason-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.reason-cards article{position:relative;background:white;border-radius:10px;padding:35px 28px;border:1px solid #eae4da}.step{position:absolute;right:27px;top:29px;color:#b2ab9c;font-size:14px}.en{font-family:Georgia,serif;font-size:32px;color:var(--dark);font-style:italic;margin:15px 0 28px}.reason-cards h3{font-size:21px;letter-spacing:-.6px;margin:0 0 13px}.reason-cards article>p:not(.en){color:var(--muted);font-size:15px;line-height:1.8}.line-tag{border-top:1px solid var(--border);display:block;padding-top:20px;margin-top:30px;font-size:12px;color:var(--dark)}.reason-bottom{text-align:center;margin:46px 0 10px;font-size:21px;line-height:1.8;font-weight:400}.reason-bottom strong{font-weight:600}.center{text-align:center}.package-tabs{display:flex;max-width:520px;margin:0 auto 35px;background:#eae7e0;padding:5px;border-radius:9px;gap:5px}.package-tabs button{border:0;background:transparent;color:#666;flex:1;padding:15px 10px;border-radius:6px;cursor:pointer;font-weight:600}.package-tabs button[aria-selected=true]{background:var(--olive);color:white;box-shadow:0 3px 6px #0000000b}.package-tabs span{font-size:10px;background:white;color:var(--dark);padding:3px 6px;border-radius:3px;margin-left:6px;vertical-align:middle}.package-panel{display:grid;grid-template-columns:1.1fr 1fr;background:white;border:1px solid var(--border);border-radius:14px;overflow:hidden}.package-panel[hidden]{display:none}.package-visual{position:relative;min-height:580px}.package-visual img{width:100%;height:100%;object-fit:cover}.visual-tag{position:absolute;bottom:26px;left:24px;border-radius:5px;background:#ffffffeb;padding:9px 16px;font-size:13px;color:var(--dark)}.package-info{padding:40px}.package-info .eyebrow{font-size:10px;margin-bottom:13px}.package-info h3{font-size:30px;margin:0;letter-spacing:-1px}.package-info>p:not(.eyebrow){color:var(--muted);margin:4px 0}.package-price{font-size:54px;color:var(--dark);font-weight:700;letter-spacing:-2px;margin:18px 0 6px;line-height:1.3}.package-price span{font-size:21px;margin-left:6px;letter-spacing:0}.package-info .dimension{font-size:14px;color:#444!important}.dimension small{display:block;font-size:12px;color:var(--muted);margin:3px 0 0}.checklist{list-style:none;margin:24px 0;padding:22px 0 0;border-top:1px solid var(--border);font-size:14px}.checklist li{margin:9px 0;padding-left:23px;position:relative}.checklist li:before{content:'✓';color:var(--olive);position:absolute;left:0;font-weight:700}.full{width:100%}.straight-copy{background:var(--section);padding:60px 40px;display:flex;flex-direction:column;justify-content:center}.straight-copy h3{font-size:32px;line-height:1.4;margin:0 0 20px;letter-spacing:-1px}.straight-copy>p:not(.en){color:var(--muted)}.specs{margin-top:28px;border-top:1px solid var(--border)}.specs details{border-bottom:1px solid var(--border);padding:22px 4px}.specs summary{font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between}.specs summary:after{content:'+';font-size:22px;line-height:1}.specs details[open] summary:after{content:'−'}.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;padding:26px 0 10px}.spec-grid span{display:block;font-size:12px;color:var(--muted);margin-bottom:3px}.spec-grid b{font-size:14px;font-weight:500}.specs details>p{font-size:14px;color:var(--muted);max-width:950px}footer{border-top:1px solid var(--border);max-width:1290px;margin:auto;padding:42px 32px 55px;display:flex;align-items:center;gap:32px}footer p{font-size:14px;color:var(--muted)}footer>span{font-size:11px;color:var(--muted);margin-left:auto}.mobile{display:none}@media(min-width:1500px){.hero{padding-top:40px;padding-bottom:30px}}@media(max-width:1000px){header{padding:0 28px}.hero{padding-left:32px;grid-template-columns:44% 56%;min-height:540px}.hero figure{height:510px}.hero h1{font-size:37px}.hero-lead{font-size:16px}.hero-tags{gap:6px}.hero-tags span{font-size:11px}.section{padding:85px 24px}.brand,.compare-labels{grid-template-columns:1fr .8fr .9fr 1.3fr;gap:12px;padding-left:20px;padding-right:20px}.brand.featured{padding-left:19px;padding-right:19px}.brand-detail b{font-size:13px}.price{font-size:25px}.reason-cards{gap:12px}.reason-cards article{padding:25px 20px}.reason-cards h3{font-size:19px}.reason-cards article>p:not(.en){font-size:14px}.package-info{padding:30px}.package-visual{min-height:560px}}@media(max-width:700px){header{height:76px;padding:0 21px;gap:12px}.logo{font-size:25px}nav{display:none}.nav-cta{font-size:12px;padding:8px 13px}.hero{display:flex;flex-direction:column;padding:30px 20px 0;gap:28px;align-items:stretch}.hero-copy{padding:0 8px}.hero .eyebrow{font-size:10px;margin-bottom:19px}.hero h1{font-size:39px;letter-spacing:-2px;margin-bottom:19px}.hero h1 strong{display:inline-block;font-size:1.35em;margin-left:7px}.hero-lead{font-size:16px;margin:0}.hero-tags{margin:20px 0}.hero .button{width:100%;min-height:52px}.hero .small{font-size:11px;text-align:center;margin-bottom:0}.hero figure{height:370px;border-radius:70px 7px 7px 7px}.image-label{left:27px;top:25px;font-size:23px}.image-label em{font-size:19px}.hero figcaption{font-size:10px;right:13px;bottom:14px}.section{padding:75px 20px}.section-head{margin-bottom:32px}.section-head h2{font-size:29px;letter-spacing:-1px}.section-head>p:last-child{font-size:14px}.eyebrow{font-size:10px}.compare-labels{display:none}.brand,.brand.featured{grid-template-columns:1fr 1fr;gap:14px;padding:22px 20px}.brand h3{font-size:19px}.brand .price{text-align:right;font-size:27px}.brand.featured .price{font-size:38px}.brand .length{font-size:14px;border-top:1px solid var(--border);padding-top:16px;align-self:stretch}.brand .brand-detail{border-top:1px solid var(--border);padding-top:16px;align-self:stretch}.brand-detail b{font-size:12px}.brand p{font-size:12px}.brand-detail>small{font-size:11px}.length small{font-size:11px}.benefit{font-size:10px;margin:7px 3px 0 0;padding:2px 4px}.compare-note{font-size:11px}.sources{font-size:11px}.reason-cards{grid-template-columns:1fr;gap:12px}.reason-cards article{padding:27px}.reason-cards .en{margin:0 0 14px;font-size:29px}.reason-cards article>p:not(.en){font-size:15px;margin:10px 0}.line-tag{padding-top:15px;margin-top:20px}.reason-bottom{font-size:18px;margin-top:34px}.mobile{display:block}.package-tabs{margin-bottom:23px}.package-tabs button{font-size:14px;padding:12px 6px}.package-panel{grid-template-columns:1fr}.package-visual{min-height:0;height:330px}.package-visual img{object-position:center 58%}.package-info{padding:28px}.package-info h3{font-size:28px}.package-price{font-size:48px}.spec-grid{grid-template-columns:1fr 1fr;gap:20px 12px}.spec-grid b{font-size:12px}.spec-grid span{font-size:11px}.specs summary{font-size:15px}.specs details>p{font-size:13px}.straight-copy{padding:36px 28px}.straight-copy h3{font-size:27px}.straight-copy .en{margin-top:0}footer{display:block;padding:32px 24px}footer .logo{font-size:25px}footer p{margin:14px 0 4px}footer>span{font-size:10px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Refined main and package value */
+.en,.image-label{font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-style:normal}
+.hero-new{grid-template-columns:43% 57%;padding-top:36px;align-items:center;row-gap:10px}
+.hero-new .hero-copy{padding:12px 38px 12px 0}
+.hero-new h1{font-size:clamp(32px,3.05vw,45px);font-weight:600;line-height:1.38;letter-spacing:-1.8px;margin:0 0 24px}
+.hero-new .hero-lead{font-size:17px;line-height:1.8;color:var(--muted)}
+.hero-new figure{border-radius:20px;height:550px}
+.hero-new figure img{object-fit:cover}
+.hero-new .eyebrow{font-size:12px;font-weight:600;letter-spacing:2.2px;margin-bottom:24px}
+.hero-offer{border-top:1px solid var(--border);margin:28px 0 24px;padding-top:22px}
+.hero-offer>span{font-size:14px;color:var(--dark);font-weight:650}
+.hero-offer>p{font-size:15px;margin:12px 0 0}
+.hero-offer strong{display:block;font-size:43px;line-height:1.4;font-weight:650;letter-spacing:-1.5px;color:var(--text)}
+.hero-offer small{font-size:21px;margin-left:5px;letter-spacing:0}
+.hero-new .small{font-size:11px;line-height:1.8}
+.hero-caption{grid-column:2;text-align:right;color:var(--muted);font-size:11px;margin:0 3px}
+.olive-text{color:var(--dark)}
+.saving{display:flex;justify-content:center;align-items:center;gap:16px;margin:24px auto 10px}
+.saving strong{color:var(--dark);background:var(--pale);border-radius:6px;padding:7px 12px;font-size:17px}
+.saving span{font-size:13px;color:var(--muted)}
+.section-head .comparison-basis{font-size:11px;color:var(--muted)}
+.price-saving{display:block;font-size:11px;letter-spacing:0;font-weight:500;margin-top:6px}
+.brand.featured .included-emphasis{font-size:13px;color:var(--dark);font-weight:600}
+@media(max-width:1000px){.hero-new h1{font-size:33px}.hero-new figure{height:510px}.hero-new .hero-copy{padding-right:22px}}
+@media(max-width:700px){.hero-new{display:grid;grid-template-columns:1fr;padding:26px 20px 0;gap:12px}.hero-new .hero-copy{display:contents}.hero-new .eyebrow{order:0;margin:0 4px 2px;font-size:11px}.hero-new h1{order:1;font-size:32px;letter-spacing:-1.3px;line-height:1.36;margin:0 4px 5px}.hero-new .hero-lead{order:2;font-size:14px;line-height:1.7;margin:0 4px 9px}.hero-new .hero-lead br{display:none}.hero-new figure{order:3;height:340px;border-radius:16px;grid-column:1}.hero-caption{order:4;grid-column:1;text-align:left;font-size:10px;margin:0 2px}.hero-offer{order:5;margin:9px 4px 3px;padding-top:18px}.hero-offer>span{font-size:14px}.hero-offer>p{display:flex;align-items:center;justify-content:space-between;font-size:13px;gap:10px;margin:10px 0}.hero-offer strong{font-size:37px;white-space:nowrap}.hero-offer small{font-size:18px}.hero-new .button{order:6}.hero-new .small{order:7;font-size:10px;margin-top:2px}.saving{flex-direction:column;gap:9px;margin-top:22px}.saving strong{font-size:16px}.saving span{font-size:11px}.compare .section-head h2{font-size:27px}.brand.featured .included-emphasis{font-size:12px}.price-saving{font-size:10px}}
+
+.reason-cards .en{font-weight:750;letter-spacing:-.6px}
+
+
+/* Product image carousel */
+.package-carousel{overflow:hidden;isolation:isolate}
+.carousel-track{position:absolute;inset:0}
+.carousel-slide{position:absolute;inset:0;margin:0;opacity:0;visibility:hidden;transition:opacity .35s ease;pointer-events:none}
+.carousel-slide.is-active{opacity:1;visibility:visible;pointer-events:auto}
+.carousel-slide img{width:100%;height:100%;object-fit:cover}
+.carousel-slide.sketch-slide img{object-fit:contain;background:#f7f5f0;padding:18px}
+.carousel-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:5;
+  width:44px;height:44px;border:1px solid rgba(255,255,255,.55);
+  border-radius:999px;background:rgba(255,255,255,.68);
+  -webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);
+  color:#333;font-size:31px;line-height:1;display:flex;align-items:center;
+  justify-content:center;cursor:pointer;box-shadow:0 3px 14px rgba(0,0,0,.08);
+  transition:background .2s,transform .2s
+}
+.carousel-arrow:hover{background:rgba(255,255,255,.94)}
+.carousel-arrow.prev{left:18px}.carousel-arrow.next{right:18px}
+.carousel-dots{
+  position:absolute;z-index:5;left:50%;bottom:19px;transform:translateX(-50%);
+  display:flex;gap:7px;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.62);
+  -webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px)
+}
+.carousel-dots button{
+  width:6px;height:6px;padding:0;border:0;border-radius:50%;
+  background:rgba(79,100,42,.32);cursor:pointer;transition:width .2s,background .2s
+}
+.carousel-dots button.is-active{width:18px;border-radius:99px;background:var(--dark)}
+.package-carousel .visual-tag{z-index:6;bottom:25px}
+@media(max-width:700px){
+  .carousel-arrow{width:38px;height:38px;font-size:27px}
+  .carousel-arrow.prev{left:11px}.carousel-arrow.next{right:11px}
+  .carousel-dots{bottom:13px}
+  .package-carousel .visual-tag{left:15px;bottom:50px;padding:7px 11px;font-size:11px}
+}
+
+
+/* Value-difference emphasis */
+.saving-value strong{white-space:nowrap}
+.featured-difference{
+  margin-top:12px!important;
+  color:var(--dark)!important;
+  font-size:12px!important;
+  font-weight:650;
+}
+@media(max-width:700px){
+  .saving-value span{max-width:290px;text-align:center;line-height:1.65}
+  .featured-difference{font-size:11px!important}
+}
+
+
+/* Comparison hierarchy v2 */
+.compare-grid-v2{display:grid;gap:14px}
+.compare-grid-v2 .brand-v2{
+  display:block;
+  padding:28px 30px;
+  min-height:0;
+}
+.compare-grid-v2 .brand-v2.featured{
+  padding:29px 29px;
+}
+.brand-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:24px;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--border);
+}
+.brand-top h3{margin:0 0 5px}
+.price-block{text-align:right;flex:0 0 auto}
+.price-saving-badge{
+  display:inline-block;
+  margin-top:8px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:var(--olive);
+  color:#fff;
+  font-size:12px;
+  font-weight:650;
+}
+.core-included{
+  display:grid;
+  grid-template-columns:110px 1fr;
+  gap:16px;
+  align-items:start;
+  padding:22px 0 13px;
+}
+.core-label{
+  font-size:12px;
+  color:var(--dark);
+  font-weight:700;
+}
+.core-included strong{
+  font-size:18px;
+  line-height:1.55;
+  letter-spacing:-.45px;
+}
+.basic-included{
+  display:grid;
+  grid-template-columns:110px 1fr;
+  gap:16px;
+  align-items:start;
+  padding:10px 0 17px;
+}
+.basic-included span{
+  font-size:12px;
+  color:#8a8a8a;
+  font-weight:600;
+}
+.basic-included p{
+  margin:0;
+  color:#8a8a8a!important;
+  font-size:13px!important;
+  line-height:1.65;
+}
+.condition-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 18px;
+  padding:15px 0;
+  border-top:1px solid #eeeae3;
+  border-bottom:1px solid #eeeae3;
+  font-size:12px;
+}
+.condition-main{font-weight:650;color:#444}
+.condition-sub{color:var(--muted)}
+.length-row{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  flex-wrap:wrap;
+  padding-top:15px;
+}
+.length-row>span{font-size:11px;color:var(--muted)}
+.length-row b{font-size:14px}
+.length-row small{font-size:11px;color:var(--muted)}
+.brand-v2.featured .core-included strong{color:var(--dark);font-size:20px}
+.brand-v2.featured .core-label{color:var(--dark)}
+@media(max-width:700px){
+  .compare-grid-v2 .brand-v2,
+  .compare-grid-v2 .brand-v2.featured{padding:22px 20px}
+  .brand-top{gap:12px;padding-bottom:18px}
+  .price-block .price{font-size:29px!important}
+  .brand-v2.featured .price-block .price{font-size:37px!important}
+  .price-saving-badge{font-size:10px;padding:5px 8px}
+  .core-included,.basic-included{grid-template-columns:1fr;gap:5px}
+  .core-included strong{font-size:16px}
+  .brand-v2.featured .core-included strong{font-size:18px}
+}
+
+
+/* Compare cards redesign */
+.compare-cards{
+  max-width:920px;
+  margin:0 auto;
+  display:grid;
+  gap:18px;
+}
+.compare-card{
+  padding:28px 30px 26px;
+  background:#fff;
+  border:1px solid #e7e3da;
+  border-radius:22px;
+  box-shadow:0 0 0 rgba(0,0,0,0);
+}
+.compare-card.featured{
+  background:#eef2e7;
+  border:2px solid #87a144;
+}
+.compare-card-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:20px;
+}
+.compare-card h3{
+  margin:10px 0 6px;
+  font-size:22px;
+  line-height:1.2;
+}
+.compare-card .kitchen-type{
+  margin:0;
+  color:#6f7c45;
+  font-size:16px;
+  font-weight:700;
+  letter-spacing:-0.02em;
+}
+.price-wrap{
+  text-align:right;
+  flex:0 0 auto;
+}
+.compare-price-main{
+  font-size:58px;
+  line-height:0.95;
+  font-weight:800;
+  letter-spacing:-0.05em;
+  white-space:nowrap;
+}
+.compare-price-main span{
+  margin-left:4px;
+  font-size:18px;
+  font-weight:700;
+}
+.save-pill{
+  display:inline-block;
+  margin-top:10px;
+  padding:7px 12px;
+  border-radius:999px;
+  background:#2f8cff;
+  color:#fff;
+  font-size:13px;
+  font-weight:700;
+}
+.compare-checks{
+  list-style:none;
+  padding:18px 0 0;
+  margin:18px 0 0;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  border-top:1px solid #dfdccc;
+}
+.compare-checks li{
+  position:relative;
+  min-height:26px;
+  padding-left:28px;
+  font-size:16px;
+  font-weight:700;
+  line-height:1.5;
+  letter-spacing:-0.03em;
+}
+.compare-checks li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:2px;
+  width:18px;
+  height:18px;
+  border-radius:6px;
+  background:#ececec;
+}
+.compare-checks li.on::before{
+  background:#2f9af4;
+}
+.compare-checks li.on::after{
+  content:"✓";
+  position:absolute;
+  left:4px;
+  top:1px;
+  color:#fff;
+  font-size:12px;
+  font-weight:800;
+}
+.compare-checks li.off{
+  color:#9a9a9a;
+}
+.compare-checks li.off::before{
+  background:#f1f1f1;
+  box-shadow:inset 0 0 0 1px #e0e0e0;
+}
+.compare-basic{
+  margin:16px 0 0;
+  color:#8c8c8c;
+  font-size:14px;
+  line-height:1.7;
+}
+.compare-basic span{
+  margin-right:8px;
+  color:#7a7a7a;
+  font-weight:700;
+}
+.compare-meta{
+  display:flex;
+  gap:12px 16px;
+  flex-wrap:wrap;
+  margin-top:16px;
+  padding-top:14px;
+  border-top:1px solid #e9e6de;
+}
+.compare-meta span{
+  color:#404040;
+  font-size:14px;
+  font-weight:700;
+}
+.compare-meta small{
+  color:#8a8a8a;
+  font-size:13px;
+}
+.compare-length{
+  margin:14px 0 0;
+  color:#404040;
+  font-size:15px;
+  line-height:1.65;
+}
+.compare-length span{
+  margin-right:10px;
+  color:#8a8a8a;
+  font-size:12px;
+  font-weight:700;
+}
+.compare-length small{
+  display:block;
+  margin-top:4px;
+  color:#8a8a8a;
+  font-size:12px;
+}
+
+@media(max-width:700px){
+  .compare-cards{gap:14px}
+  .compare-card{
+    padding:22px 20px 20px;
+    border-radius:18px;
+  }
+  .compare-card-head{
+    flex-direction:column;
+    gap:14px;
+  }
+  .compare-card h3{
+    font-size:18px;
+  }
+  .compare-card .kitchen-type{
+    font-size:13px;
+  }
+  .price-wrap{
+    text-align:left;
+  }
+  .compare-price-main{
+    font-size:36px;
+  }
+  .compare-price-main span{
+    font-size:14px;
+  }
+  .save-pill{
+    margin-top:8px;
+    font-size:11px;
+    padding:6px 10px;
+  }
+  .compare-checks{
+    grid-template-columns:1fr;
+    gap:10px;
+    margin-top:16px;
+    padding-top:16px;
+  }
+  .compare-checks li{
+    font-size:14px;
+    padding-left:24px;
+  }
+  .compare-checks li::before{
+    width:16px;
+    height:16px;
+    border-radius:5px;
+  }
+  .compare-checks li.on::after{
+    left:4px;
+    top:1px;
+    font-size:11px;
+  }
+  .compare-basic{
+    font-size:12px;
+  }
+  .compare-meta span,
+  .compare-meta small{
+    font-size:12px;
+  }
+  .compare-length{
+    font-size:13px;
+  }
+  .compare-length span,
+  .compare-length small{
+    font-size:11px;
+  }
+}
+
+</style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 </head>
 <body>
@@ -44,79 +450,127 @@
   <div class="section-head">
     <p class="eyebrow">01 / COMPARE</p>
     <h2><span class="olive-text">390만원에, 주방부터 냉장고장·키큰장까지.</span><br>비슷한 가격이어도 포함되는 구성은 다릅니다.</h2>
-    <p>로홈 노앙 390 패키지는 키큰장과 1m 냉장고장까지 기본 구성에 포함됩니다.</p>
+    <p>가격만 보지 말고, 실제로 포함되는 장 구성까지 비교해 보세요.</p>
     <div class="saving saving-value">
-      <strong>냉장고장까지 포함</strong>
-      <span>비슷한 가격대에서도 별도 제작 시 약 50~80만원 수준의 냉장고장 구성이 하나 더.</span>
+      <strong>타사 대비 최대 83만원 낮게</strong>
+      <span>로홈 390만원 · 비교 대상 판매가 중 최대 차이 기준</span>
     </div>
-    <p class="comparison-basis">냉장고장 별도 제작가는 자재·규격·마감·설치 조건에 따라 달라질 수 있습니다.</p>
+    <p class="comparison-basis">업체별 길이·포함 사양·시공 조건이 다르므로 동일 규격 견적 비교는 아닙니다.</p>
   </div>
 
-  <div class="compare-grid">
-    <div class="compare-labels">
-      <span>브랜드 / 패키지</span><span>판매가격</span><span>구성 길이</span><span>포함 구성 및 시공 조건</span>
-    </div>
+  <div class="compare-cards">
+    <article class="compare-card featured">
+      <div class="compare-card-head">
+        <div>
+          <span class="pill">LOHOME PICK</span>
+          <h3>로홈 노앙 390 패키지</h3>
+          <p class="kitchen-type">ㄱ자 + 키큰장 + 냉장고장</p>
+        </div>
+        <div class="price-wrap">
+          <div class="compare-price-main">390<span>만원</span></div>
+          <div class="save-pill">타사 대비 최대 83만원 낮게</div>
+        </div>
+      </div>
 
-    <article class="brand featured">
-      <div>
-        <span class="pill">LOHOME PICK</span>
-        <h3>로홈 노앙 390 패키지</h3>
-        <p class="included-emphasis">키큰장 + 1m 냉장고장까지 포함</p>
+      <ul class="compare-checks">
+        <li class="on">싱크대 상·하부장</li>
+        <li class="on">키큰장</li>
+        <li class="on">냉장고장 1m</li>
+      </ul>
+
+      <p class="compare-basic"><span>기본 포함</span> 쿡탑 · 수전 · 싱크볼 · 슬림후드 · 기본 악세사리</p>
+
+      <div class="compare-meta">
+        <span>실측 · 배송 · 설치 무료</span>
+        <small>철거비 별도</small>
       </div>
-      <div class="price">390<small>만원</small><span class="price-saving">최대 83만원 낮게</span></div>
-      <div class="length">총 5.9m 이하<small>주방·키큰장 약 4.9m<br>+ 냉장고장 1m</small></div>
-      <div class="brand-detail">
-        <b>키큰장 · 냉장고장 · 쿡탑 · 수전 포함</b>
-        <p>싱크볼 · 슬림후드 · 3단 서랍장 · 기본 악세사리</p>
-        <span class="benefit">방문 실측 무료</span>
-        <span class="benefit">배송·설치 무료</span>
-        <small>철거비 별도</small><p class="featured-difference">비슷한 가격대에서 냉장고장 구성이 하나 더.</p>
-      </div>
+
+      <p class="compare-length"><span>구성 길이</span> 총 5.9m 이하 <small>주방·키큰장 약 4.9m + 냉장고장 1m</small></p>
     </article>
 
-    <article class="brand">
-      <div><h3>한샘</h3><p>인생키친 슬림 · 키큰장형</p></div>
-      <div class="price">399.23<small>만원</small></div>
-      <div class="length">5.3–5.8m 이하</div>
-      <div class="brand-detail">
-        <b>키큰장형 · 가스쿡탑 · 후드 포함</b>
-        <p>수전 · 싱크볼 포함 / 철거·시공비 포함</p>
-        <small>폐기물 처리비 별도 · 냉장고장 포함 여부 별도 표기 없음</small>
+    <article class="compare-card">
+      <div class="compare-card-head">
+        <div>
+          <h3>한샘</h3>
+          <p class="kitchen-type">ㄱ자 + 키큰장</p>
+        </div>
+        <div class="price-wrap">
+          <div class="compare-price-main">399.23<span>만원</span></div>
+        </div>
       </div>
+
+      <ul class="compare-checks">
+        <li class="on">싱크대 상·하부장</li>
+        <li class="on">키큰장</li>
+        <li class="off">냉장고장</li>
+      </ul>
+
+      <p class="compare-basic"><span>기본 포함</span> 쿡탑 · 후드 · 수전 · 싱크볼</p>
+
+      <div class="compare-meta">
+        <span>철거 · 시공비 포함</span>
+        <small>폐기물 처리비 별도</small>
+      </div>
+
+      <p class="compare-length"><span>구성 길이</span> 5.3–5.8m 이하</p>
     </article>
 
-    <article class="brand">
-      <div><h3>찬장주방</h3><p>ㄱ자형 주방</p></div>
-      <div class="price">385<small>만원</small></div>
-      <div class="length">5.5m</div>
-      <div class="brand-detail">
-        <b>상·하부장 · 3단 서랍 · 후드 · 싱크볼</b>
-        <p>수전·쿡탑 추가 옵션 / 배송비 무료</p>
-        <small>18T E0 MDF · 한솔 또는 LX 표면재 · 30T 상판</small>
+    <article class="compare-card">
+      <div class="compare-card-head">
+        <div>
+          <h3>찬장주방</h3>
+          <p class="kitchen-type">ㄱ자 싱크대</p>
+        </div>
+        <div class="price-wrap">
+          <div class="compare-price-main">385<span>만원</span></div>
+        </div>
       </div>
+
+      <ul class="compare-checks">
+        <li class="on">싱크대 상·하부장</li>
+        <li class="off">키큰장</li>
+        <li class="off">냉장고장</li>
+      </ul>
+
+      <p class="compare-basic"><span>기본 포함</span> 후드 · 싱크볼</p>
+
+      <div class="compare-meta">
+        <span>배송비 무료</span>
+        <small>수전 · 쿡탑 추가 옵션</small>
+      </div>
+
+      <p class="compare-length"><span>구성 길이</span> 5.5m</p>
     </article>
 
-    <article class="brand">
-      <div><h3>닥터싱크</h3><p>모말르 화이트 · 공식몰</p></div>
-      <div class="price">463<small>만원</small></div>
-      <div class="length">4.4m 이하</div>
-      <div class="brand-detail">
-        <b>사각볼 · 팬트리장 등 유료 옵션</b>
-        <p>일부 수도권 지역 출장비 별도</p>
-        <small>스마트스토어 판매가격 473만원</small>
+    <article class="compare-card">
+      <div class="compare-card-head">
+        <div>
+          <h3>닥터싱크</h3>
+          <p class="kitchen-type">ㄱ자 싱크대</p>
+        </div>
+        <div class="price-wrap">
+          <div class="compare-price-main">463<span>만원</span></div>
+        </div>
       </div>
+
+      <ul class="compare-checks">
+        <li class="on">싱크대 상·하부장</li>
+        <li class="off">키큰장</li>
+        <li class="off">냉장고장</li>
+      </ul>
+
+      <p class="compare-basic"><span>기본 포함</span> 기존 비교표 기준 구성</p>
+
+      <div class="compare-meta">
+        <span>일부 수도권 지역 출장비 별도</span>
+        <small>사각볼 · 팬트리장 등 유료 옵션</small>
+      </div>
+
+      <p class="compare-length"><span>구성 길이</span> 4.4m 이하 <small>스마트스토어 판매가격 473만원</small></p>
     </article>
   </div>
 
-  <p class="compare-note">2026.10.02 기준 · 업체별 판매 옵션의 길이와 포함 범위가 다르며 동일 규격 견적 비교는 아닙니다. 20–30평대는 제안 대상이며 설치 가능 여부는 실제 공간에 따라 달라집니다. 로홈 총 길이는 냉장고장을 합산한 패키지 기준입니다.</p>
-
-  <details class="sources">
-    <summary>비교 기준 및 판매 페이지</summary>
-    <p>로홈: 주방·키큰장 약 4.9m + 냉장고장 1m. 주방 두 변의 코너 깊이를 각각 포함한 기획 규격이며 마감판은 별도입니다. 타사 가격은 표시된 판매 옵션 기준으로, 선택 옵션 및 현장 조건에 따라 달라질 수 있습니다.</p>
-    <a href="https://ohou.se/productions/831660" target="_blank" rel="noopener">한샘 판매 페이지</a>
-    <a href="https://smartstore.naver.com/chanjang7201/products/7709375972" target="_blank" rel="noopener">찬장주방 판매 페이지</a>
-    <a href="https://drkitchen.co.kr/product/detail.html?product_no=1119" target="_blank" rel="noopener">닥터싱크 공식몰</a>
-  </details>
+  <p class="compare-note">2026.10.02 기준 · 업체별 판매 옵션의 길이와 포함 범위가 다르며 동일 규격 견적 비교는 아닙니다. 로홈 총 길이는 냉장고장을 합산한 패키지 기준입니다.</p>
 </section>
 
 <section id="package" class="section packages">
@@ -274,6 +728,100 @@
 
 
 
-<script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = [...document.querySelectorAll('.package-tabs [role="tab"]')];
+  const panels = [...document.querySelectorAll('.package-panel[role="tabpanel"]')];
+
+  function setupCarousel(carousel) {
+    if (!carousel || carousel.dataset.ready === '1') return;
+    carousel.dataset.ready = '1';
+
+    const slides = [...carousel.querySelectorAll('.carousel-slide')];
+    const dots = [...carousel.querySelectorAll('.carousel-dots button')];
+    const prev = carousel.querySelector('.carousel-arrow.prev');
+    const next = carousel.querySelector('.carousel-arrow.next');
+    let index = 0;
+    let touchStartX = 0;
+
+    function showSlide(newIndex) {
+      if (!slides.length) return;
+      index = (newIndex + slides.length) % slides.length;
+      slides.forEach((slide, i) => slide.classList.toggle('is-active', i === index));
+      dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
+    }
+
+    prev?.addEventListener('click', e => {
+      e.preventDefault();
+      e.stopPropagation();
+      showSlide(index - 1);
+    });
+
+    next?.addEventListener('click', e => {
+      e.preventDefault();
+      e.stopPropagation();
+      showSlide(index + 1);
+    });
+
+    dots.forEach((dot, i) => dot.addEventListener('click', e => {
+      e.preventDefault();
+      e.stopPropagation();
+      showSlide(i);
+    }));
+
+    carousel.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].clientX;
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', e => {
+      const distance = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(distance) < 45) return;
+      showSlide(distance < 0 ? index + 1 : index - 1);
+    }, { passive: true });
+
+    showSlide(0);
+  }
+
+  function activateTab(tab) {
+    const target = tab.getAttribute('aria-controls');
+
+    tabs.forEach(btn => {
+      const active = btn === tab;
+      btn.setAttribute('aria-selected', active ? 'true' : 'false');
+      btn.tabIndex = active ? 0 : -1;
+    });
+
+    panels.forEach(panel => {
+      panel.hidden = panel.id !== target;
+    });
+
+    const activePanel = document.getElementById(target);
+    setupCarousel(activePanel?.querySelector('[data-carousel]'));
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => activateTab(tab));
+
+    tab.addEventListener('keydown', e => {
+      const current = tabs.indexOf(tab);
+      let next = current;
+
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next = (current + 1) % tabs.length;
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') next = (current - 1 + tabs.length) % tabs.length;
+      if (e.key === 'Home') next = 0;
+      if (e.key === 'End') next = tabs.length - 1;
+
+      if (next !== current) {
+        e.preventDefault();
+        tabs[next].focus();
+        activateTab(tabs[next]);
+      }
+    });
+  });
+
+  document.querySelectorAll('[data-carousel]').forEach(setupCarousel);
+});
+
+</script>
 </body>
 </html>
