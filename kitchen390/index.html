@@ -483,6 +483,161 @@
   }
 }
 
+
+/* Executive comparison summary */
+.executive-compare-head{
+  max-width:920px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.executive-compare-head h2{
+  font-size:42px;
+  line-height:1.35;
+  margin-bottom:14px;
+}
+.executive-sub{
+  margin:0 0 30px!important;
+  font-size:17px!important;
+  color:#555!important;
+  font-weight:650;
+}
+.executive-price-compare{
+  display:grid;
+  grid-template-columns:1fr 64px 1fr;
+  align-items:center;
+  gap:18px;
+  margin:30px auto 18px;
+}
+.executive-price-box{
+  min-height:178px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:24px 20px;
+  border-radius:18px;
+  border:1px solid var(--border);
+  background:#fff;
+}
+.executive-price-box.lohome{
+  background:var(--pale);
+  border:2px solid var(--olive);
+}
+.executive-brand{
+  font-size:15px;
+  font-weight:800;
+  letter-spacing:.02em;
+  margin-bottom:6px;
+}
+.executive-price-box strong{
+  font-size:54px;
+  line-height:1.05;
+  letter-spacing:-.045em;
+}
+.executive-price-box strong small{
+  margin-left:4px;
+  font-size:18px;
+  letter-spacing:0;
+}
+.executive-price-box em{
+  margin-top:10px;
+  color:var(--muted);
+  font-size:12px;
+  font-style:normal;
+}
+.executive-price-box.lohome strong,
+.executive-price-box.lohome .executive-brand{
+  color:var(--dark);
+}
+.executive-arrow{
+  font-size:36px;
+  color:#9a9a9a;
+  font-weight:500;
+}
+.executive-saving{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+  margin:12px 0 10px;
+}
+.executive-saving strong{
+  padding:8px 15px;
+  border-radius:10px;
+  background:#dbe7b3;
+  color:#4f6928;
+  font-size:24px;
+  font-weight:850;
+  line-height:1.2;
+}
+.executive-saving span{
+  font-size:19px;
+  font-weight:750;
+  color:#333;
+}
+.executive-compare-head .comparison-basis{
+  margin-top:16px!important;
+  font-size:11px!important;
+  color:var(--muted)!important;
+}
+
+@media(max-width:700px){
+  .executive-compare-head h2{
+    font-size:30px;
+  }
+  .executive-sub{
+    font-size:14px!important;
+    margin-bottom:20px!important;
+  }
+  .executive-price-compare{
+    grid-template-columns:1fr 36px 1fr;
+    gap:8px;
+    margin-top:22px;
+  }
+  .executive-price-box{
+    min-height:146px;
+    padding:18px 10px;
+    border-radius:15px;
+  }
+  .executive-price-box strong{
+    font-size:38px;
+  }
+  .executive-price-box strong small{
+    font-size:13px;
+  }
+  .executive-price-box em{
+    font-size:10px;
+    line-height:1.4;
+  }
+  .executive-arrow{
+    font-size:25px;
+  }
+  .executive-saving{
+    gap:8px;
+    flex-direction:column;
+  }
+  .executive-saving strong{
+    font-size:21px;
+  }
+  .executive-saving span{
+    font-size:16px;
+  }
+}
+
+
+.price-source{
+  display:block;
+  margin-top:6px;
+  font-size:11px !important;
+  font-weight:600 !important;
+  color:#8a8a8a;
+  letter-spacing:0 !important;
+}
+@media(max-width:700px){
+  .price-source{font-size:10px !important}
+}
+
 </style>
 <style>
   .nav-cta{border-color:#8956d6;background:#8956d6;color:#fff;font-weight:700;transition:background .2s,transform .2s}
@@ -505,7 +660,6 @@
 <main>
 <section class="hero hero-new">
   <div class="hero-copy">
-    <p class="eyebrow">LOHOME NOHANT / ONLINE TEAM PROPOSAL</p>
     <h1>노앙 390 주방 패키지 제안</h1>
     <p class="hero-lead">구성: ㄱ자 주방 + 키큰장 600mm + 냉장고장 1m</p>
     <div class="hero-offer">
@@ -538,14 +692,33 @@
 </section>
 
 <section id="compare" class="section compare">
-  <div class="section-head">
-    <p class="eyebrow">01 / COMPARE</p>
-    <h2><span class="olive-text">로홈 노앙 390 패키지</span></h2>
-    <div class="saving saving-value">
-      <strong><span class="saving-accent">한샘 대비</span> 183만원 낮음</strong>
-      <span>573만원 → 390만원 · 약 32%↓</span>
+  <div class="section-head executive-compare-head">
+    <p class="eyebrow">01 / PRICE &amp; PACKAGE COMPARISON</p>
+    <h2>동일 핵심 구성 기준<br><span class="olive-text">로홈이 183만원 낮습니다.</span></h2>
+    <p class="executive-sub">ㄱ자 주방 + 키큰장 + 냉장고장 기준</p>
+
+    <div class="executive-price-compare" aria-label="한샘과 로홈 가격 비교">
+      <div class="executive-price-box competitor">
+        <span class="executive-brand">한샘</span>
+        <strong>573<small>만원</small></strong>
+        <em>냉장고장 포함 선택 시 · 한샘몰 기준</em>
+      </div>
+
+      <div class="executive-arrow" aria-hidden="true">→</div>
+
+      <div class="executive-price-box lohome">
+        <span class="executive-brand">LOHOME</span>
+        <strong>390<small>만원</small></strong>
+        <em>노앙 390 패키지 제안가</em>
+      </div>
     </div>
-    <p class="comparison-basis">동일 핵심 구성: ㄱ자 싱크대 + 키큰장 + 냉장고장</p>
+
+    <div class="executive-saving">
+      <strong>183만원 절감</strong>
+      <span>약 32% 낮은 가격</span>
+    </div>
+
+    <p class="comparison-basis">※ 핵심 구성 기준 비교이며 업체별 세부 규격·시공 조건은 다를 수 있습니다.</p>
   </div>
 
   <div class="compare-cards">
@@ -558,7 +731,7 @@
         </div>
         <div class="price-wrap">
           <div class="compare-price-main">390<span>만원</span></div>
-          <div class="save-pill">한샘 대비 -183만원</div>
+          <div class="save-pill">핵심 구성 모두 포함</div>
         </div>
       </div>
 
@@ -575,7 +748,7 @@
         <small>철거비 별도</small>
       </div>
 
-      <p class="compare-length"><span>구성 길이</span> 총 5.9m 이하 <small>주방·키큰장 약 4.9m + 냉장고장 1m</small></p>
+      <p class="compare-length"><span>구성</span> ㄱ자 싱크대 + 키큰장 60cm + 냉장고장 1m</p>
     </article>
 
     <article class="compare-card" data-brand="hanssem">
@@ -585,7 +758,7 @@
           <p class="kitchen-type" id="hanssem-type">ㄱ자 + 키큰장</p>
         </div>
         <div class="price-wrap">
-          <div class="compare-price-main" id="hanssem-price">399.23<span>만원</span></div>
+          <div class="compare-price-main" id="hanssem-price">399.23<span>만원</span><small class="price-source">(N스토어 기준)</small></div>
         </div>
       </div>
 
@@ -664,7 +837,7 @@
     </article>
   </div>
 
-  <p class="compare-note">2026.10.02 기준 · 업체별 판매 옵션의 길이와 포함 범위가 다르며 동일 규격 견적 비교는 아닙니다. 로홈 총 길이는 냉장고장을 합산한 패키지 기준입니다.</p>
+  <p class="compare-note">2026.10.02 기준 · 업체별 판매 옵션의 길이와 포함 범위가 다르며 동일 규격 견적 비교는 아닙니다.</p>
 </section>
 
 <section id="package" class="section packages">
@@ -706,7 +879,7 @@
       <h3>로홈 390 주방</h3>
       <p>주방 맞춤형 리모델링</p>
       <div class="package-price">390<span>만원</span></div>
-      <p class="dimension">총 5.9m 이하 기준<small>주방·키큰장 약 4.9m + 냉장고장 1m</small></p>
+      <p class="dimension">ㄱ자 싱크대 + 키큰장 60cm + 냉장고장 1m</p>
       <ul class="checklist">
         <li>키큰장 600mm + 냉장고장 1m</li>
         <li>상·하부장 + 3단 서랍장</li>
@@ -954,12 +1127,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hint) hint.textContent = enabled ? '추가 선택됨 · 다시 클릭하면 해제' : '클릭하여 추가';
 
     if (enabled) {
-      hanssemPrice.innerHTML = '573<span>만원</span>';
+      hanssemPrice.innerHTML = '573<span>만원</span><small class="price-source">(한샘몰 기준)</small>';
       hanssemType.textContent = 'ㄱ자 + 키큰장 + 냉장고장';
       hanssemLength.innerHTML = '<span>구성 길이</span> 4m 주방 + 냉장고장';
       if (hanssemOptionNote) hanssemOptionNote.textContent = '냉장고장 추가 선택 적용';
     } else {
-      hanssemPrice.innerHTML = '399.23<span>만원</span>';
+      hanssemPrice.innerHTML = '399.23<span>만원</span><small class="price-source">(N스토어 기준)</small>';
       hanssemType.textContent = 'ㄱ자 + 키큰장';
       hanssemLength.innerHTML = '<span>구성 길이</span> 5.3–5.8m 이하';
       if (hanssemOptionNote) hanssemOptionNote.textContent = '기본 세팅: 싱크대 상·하부장 + 키큰장';
