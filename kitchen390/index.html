@@ -422,6 +422,67 @@
   .hero-main-carousel .carousel-dots{bottom:12px}
 }
 
+
+/* Hanssem interactive refrigerator option */
+.compare-card[data-brand="hanssem"] .compare-checks li.option-toggle{
+  cursor:pointer;
+  user-select:none;
+}
+.compare-card[data-brand="hanssem"] .compare-checks li.option-toggle::before{
+  transition:background .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+.compare-card[data-brand="hanssem"] .compare-checks li.option-toggle:hover::before{
+  transform:scale(1.06);
+}
+.compare-card[data-brand="hanssem"] .compare-checks li.option-toggle:focus-visible{
+  outline:2px solid var(--olive);
+  outline-offset:5px;
+  border-radius:6px;
+}
+.compare-card[data-brand="hanssem"] .compare-checks li.option-toggle .option-hint{
+  display:block;
+  margin-top:2px;
+  color:#9a9a9a;
+  font-size:11px;
+  font-weight:500;
+  line-height:1.4;
+}
+.compare-card[data-brand="hanssem"] .compare-checks li.option-toggle.on .option-hint{
+  color:#6f7c45;
+}
+.compare-card[data-brand="hanssem"] .hanssem-option-note{
+  margin:10px 0 0;
+  color:#8a8a8a;
+  font-size:12px;
+}
+
+
+.saving-value strong{
+  font-size:34px !important;
+  line-height:1.2;
+  font-weight:800;
+  letter-spacing:-0.04em;
+}
+.saving-accent{
+  display:inline-block;
+  margin-right:6px;
+  padding:4px 10px 5px;
+  border-radius:10px;
+  background:#dbe7b3;
+  color:#4f6928;
+  font-weight:900;
+  box-shadow:inset 0 0 0 1px rgba(79,105,40,.08);
+}
+@media(max-width:700px){
+  .saving-value strong{
+    font-size:28px !important;
+  }
+  .saving-accent{
+    padding:3px 8px 4px;
+    border-radius:9px;
+  }
+}
+
 </style>
 <style>
   .nav-cta{border-color:#8956d6;background:#8956d6;color:#fff;font-weight:700;transition:background .2s,transform .2s}
@@ -444,12 +505,12 @@
 <main>
 <section class="hero hero-new">
   <div class="hero-copy">
-    <p class="eyebrow">LOHOME NOHANT</p>
-    <h1>키큰장에 냉장고장까지.<br>주방 하나, 제대로.</h1>
-    <p class="hero-lead">수납부터 기본 기기까지 담은<br>로홈 노앙 ㄱ자 주방 패키지.</p>
+    <p class="eyebrow">LOHOME NOHANT / ONLINE TEAM PROPOSAL</p>
+    <h1>노앙 390 주방 패키지 제안</h1>
+    <p class="hero-lead">구성: ㄱ자 주방 + 키큰장 600mm + 냉장고장 1m</p>
     <div class="hero-offer">
-      <span>키큰장 600mm + 냉장고장 1m 포함</span>
-      <p>주방 맞춤형 리모델링 <strong>390<small>만원</small></strong></p>
+      <span>온라인팀 제안안</span>
+      <p>제안가 <strong>390<small>만원</small></strong></p>
     </div>
     <a href="#package" class="button">390 주방 구성 보기</a>
     <p class="small">서울·인천·경기 무료 실측·배송·설치<br>온라인 결제 후 방문 실측 · 철거비 별도</p>
@@ -480,12 +541,11 @@
   <div class="section-head">
     <p class="eyebrow">01 / COMPARE</p>
     <h2><span class="olive-text">로홈 노앙 390 패키지</span></h2>
-    <p><strong>390만원 · 타사 대비 최대 83만원 낮음</strong><br>ㄱ자 싱크대 + 키큰장 + 냉장고장 포함</p>
     <div class="saving saving-value">
-      <strong>390만원</strong>
-      <span>타사 대비 최대 83만원 낮음</span>
+      <strong><span class="saving-accent">한샘 대비</span> 183만원 낮음</strong>
+      <span>573만원 → 390만원 · 약 32%↓</span>
     </div>
-    <p class="comparison-basis">구성: ㄱ자 싱크대 + 키큰장 + 냉장고장</p>
+    <p class="comparison-basis">동일 핵심 구성: ㄱ자 싱크대 + 키큰장 + 냉장고장</p>
   </div>
 
   <div class="compare-cards">
@@ -498,7 +558,7 @@
         </div>
         <div class="price-wrap">
           <div class="compare-price-main">390<span>만원</span></div>
-          <div class="save-pill">타사 대비 최대 83만원 낮게</div>
+          <div class="save-pill">한샘 대비 -183만원</div>
         </div>
       </div>
 
@@ -518,31 +578,35 @@
       <p class="compare-length"><span>구성 길이</span> 총 5.9m 이하 <small>주방·키큰장 약 4.9m + 냉장고장 1m</small></p>
     </article>
 
-    <article class="compare-card">
+    <article class="compare-card" data-brand="hanssem">
       <div class="compare-card-head">
         <div>
           <h3>한샘</h3>
-          <p class="kitchen-type">ㄱ자 + 키큰장</p>
+          <p class="kitchen-type" id="hanssem-type">ㄱ자 + 키큰장</p>
         </div>
         <div class="price-wrap">
-          <div class="compare-price-main">399.23<span>만원</span></div>
+          <div class="compare-price-main" id="hanssem-price">399.23<span>만원</span></div>
         </div>
       </div>
 
       <ul class="compare-checks">
         <li class="on">싱크대 상·하부장</li>
         <li class="on">키큰장</li>
-        <li class="off">냉장고장</li>
+        <li class="off option-toggle" id="hanssem-fridge-toggle" role="checkbox" aria-checked="false" tabindex="0">
+          냉장고장
+          <span class="option-hint">클릭하여 추가</span>
+        </li>
       </ul>
 
       <p class="compare-basic"><span>기본 포함</span> 쿡탑 · 후드 · 수전 · 싱크볼</p>
+      <p class="hanssem-option-note" id="hanssem-option-note">기본 세팅: 싱크대 상·하부장 + 키큰장</p>
 
       <div class="compare-meta">
         <span>철거 · 시공비 포함</span>
         <small>폐기물 처리비 별도</small>
       </div>
 
-      <p class="compare-length"><span>구성 길이</span> 5.3–5.8m 이하</p>
+      <p class="compare-length" id="hanssem-length"><span>구성 길이</span> 5.3–5.8m 이하</p>
     </article>
 
     <article class="compare-card">
@@ -870,6 +934,50 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+
+  // 한샘 냉장고장 옵션: 기본값은 미포함
+  const hanssemFridgeToggle = document.getElementById('hanssem-fridge-toggle');
+  const hanssemPrice = document.getElementById('hanssem-price');
+  const hanssemType = document.getElementById('hanssem-type');
+  const hanssemLength = document.getElementById('hanssem-length');
+  const hanssemOptionNote = document.getElementById('hanssem-option-note');
+
+  function setHanssemFridgeOption(enabled) {
+    if (!hanssemFridgeToggle || !hanssemPrice || !hanssemType || !hanssemLength) return;
+
+    hanssemFridgeToggle.classList.toggle('on', enabled);
+    hanssemFridgeToggle.classList.toggle('off', !enabled);
+    hanssemFridgeToggle.setAttribute('aria-checked', enabled ? 'true' : 'false');
+
+    const hint = hanssemFridgeToggle.querySelector('.option-hint');
+    if (hint) hint.textContent = enabled ? '추가 선택됨 · 다시 클릭하면 해제' : '클릭하여 추가';
+
+    if (enabled) {
+      hanssemPrice.innerHTML = '573<span>만원</span>';
+      hanssemType.textContent = 'ㄱ자 + 키큰장 + 냉장고장';
+      hanssemLength.innerHTML = '<span>구성 길이</span> 4m 주방 + 냉장고장';
+      if (hanssemOptionNote) hanssemOptionNote.textContent = '냉장고장 추가 선택 적용';
+    } else {
+      hanssemPrice.innerHTML = '399.23<span>만원</span>';
+      hanssemType.textContent = 'ㄱ자 + 키큰장';
+      hanssemLength.innerHTML = '<span>구성 길이</span> 5.3–5.8m 이하';
+      if (hanssemOptionNote) hanssemOptionNote.textContent = '기본 세팅: 싱크대 상·하부장 + 키큰장';
+    }
+  }
+
+  if (hanssemFridgeToggle) {
+    hanssemFridgeToggle.addEventListener('click', () => {
+      setHanssemFridgeOption(hanssemFridgeToggle.getAttribute('aria-checked') !== 'true');
+    });
+
+    hanssemFridgeToggle.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        setHanssemFridgeOption(hanssemFridgeToggle.getAttribute('aria-checked') !== 'true');
+      }
+    });
+  }
 
   document.querySelectorAll('[data-carousel]').forEach(setupCarousel);
 });
