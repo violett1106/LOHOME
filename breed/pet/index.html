@@ -1,1 +1,75 @@
-
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#f8f9f8" />
+  <meta name="description" content="LOHOME 브리드 펫라인 브랜드 스토리와 제품 소개" />
+  <title>BREED PET LINE | LOHOME</title>
+  <style>
+  @font-face{font-family:"Cafe24Nyangi";src:url("fonts/Cafe24Nyangi-B-v1.0.woff2") format("woff2");font-display:swap}
+  @font-face{font-family:"Cafe24Meongi";src:url("fonts/Cafe24Meongi-B-v1.0.woff2") format("woff2");font-display:swap}
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+  
+  :root {--ink:#34294a;--muted:#82778f;--line:#eadff4;--sage:#816bff;--bg:#fff2fa;--max:1200px}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:Pretendard,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;-webkit-font-smoothing:antialiased}button,a{font:inherit}a{color:inherit;text-decoration:none}button{cursor:pointer}img,video{display:block;max-width:100%}
+  .header{height:74px;display:flex;justify-content:space-between;align-items:center;padding:0 clamp(20px,5vw,70px);border-bottom:1px solid #eef0ee;background:#fff}.logo{font-size:25px;letter-spacing:-1.3px;font-weight:800}.logo span{font-size:10px;display:block;font-weight:600;letter-spacing:2.2px;color:#7b8882;margin-top:1px}.back{font-size:12px;color:#687670;letter-spacing:.02em}.back:hover{color:#1d2925}
+  .intro{padding:80px 24px 48px;text-align:center}.eyebrow{color:#7b9787;font-size:11px;font-weight:800;letter-spacing:3px}.intro h1{font-size:clamp(42px,6.2vw,86px);letter-spacing:-.065em;font-weight:700;line-height:1.05;margin:24px 0}.intro p{font-size:clamp(14px,1.6vw,18px);color:#6b7871;line-height:1.9;margin:0}.intro .dot{color:#92b4a0}
+  .film-section{padding:0 clamp(16px,4vw,60px)}.film-shell{max-width:1440px;margin:auto;background:#e7ece8;aspect-ratio:16/8.2;position:relative;overflow:hidden}.film-shell video{width:100%;height:100%;object-fit:cover}.film-placeholder{position:absolute;inset:0;display:grid;place-content:center;text-align:center;background:linear-gradient(122deg,#eaf0ec,#d8e4dc 54%,#e7ece9);gap:15px}.film-placeholder .play{width:72px;height:72px;border:1px solid #70887b;border-radius:50%;display:grid;place-items:center;margin:auto;color:#647b6e;font-size:26px}.film-placeholder .small{font-size:11px;letter-spacing:3px;color:#5f7569}.film-placeholder strong{font-size:clamp(18px,2.8vw,32px);letter-spacing:-.04em}.film-caption{text-align:center;margin:20px 0 0;font-size:11px;letter-spacing:2.2px;color:#9aa49f}
+  .section{max-width:var(--max);margin:0 auto;padding:126px 24px}.section-header{text-align:center;margin-bottom:42px}.section-header h2{font-size:clamp(29px,4vw,48px);line-height:1.26;letter-spacing:-.055em;font-weight:700;margin:18px 0}.section-header p{color:#758079;font-size:14px;line-height:1.9;margin:0}
+  .gallery{position:relative;overflow:hidden;touch-action:pan-y;background:#e4e9e5}.gallery-track{display:flex;transition:transform .52s cubic-bezier(.2,.75,.25,1);will-change:transform}.gallery-slide{min-width:100%;aspect-ratio:16/9;position:relative;display:grid;place-items:center;overflow:hidden}.gallery-slide img{width:100%;height:100%;object-fit:cover}.mock{width:100%;height:100%;display:flex;align-items:center;justify-content:center;position:relative}.mock.a{background:linear-gradient(105deg,#f2f4f1 0 58%,#dfe5e1 58%)}.mock.b{background:linear-gradient(130deg,#e6eae5,#d5ddd7)}.mock.c{background:linear-gradient(90deg,#e0e7e2,#f2f5f2)}.mock.d{background:linear-gradient(120deg,#f0f0eb,#dce6e0)}.wardrobe{position:relative;width:28%;min-width:150px;max-width:285px;height:78%;background:#f6f7f3;border:5px solid #e4e6e0;box-shadow:18px 18px 25px #60726720;display:flex;flex-direction:column;align-items:center}.wardrobe .top{width:100%;height:38%;border-bottom:5px solid #e2e5e0;background:linear-gradient(90deg,#f5f5ef 49%,#e5e8e2 49% 51%,#f6f6f1 51%)}.wardrobe .shelf{height:16%;width:100%;border-bottom:5px solid #e4e6e1;background:#e9e9e0}.wardrobe .arch{height:46%;width:79%;border-radius:50% 50% 0 0 / 35% 35% 0 0;background:#bdc8be;position:absolute;bottom:0}.mock-label{position:absolute;bottom:18px;left:22px;background:#ffffffdc;color:#67776c;padding:10px 14px;font-size:12px;letter-spacing:1px}.nav-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:2;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;border:1px solid #ffffffa6;background:#ffffffd9;color:#26312e;font-size:26px;transition:background .2s}.nav-btn:hover{background:#fff}.prev{left:21px}.next{right:21px}.gallery-footer{display:flex;justify-content:space-between;align-items:center;padding:21px 1px}.counter{font-size:12px;letter-spacing:2px;color:#708077}.dots{display:flex;gap:8px}.dots button{height:6px;width:6px;padding:0;border:0;border-radius:30px;background:#cbd2cc;transition:width .2s,background .2s}.dots button.active{width:26px;background:#829d8d}
+  .feature-band{background:var(--bg);padding:100px 24px}.feature-inner{max-width:var(--max);margin:auto}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{background:#fff;border:1px solid #ebeeeb;padding:34px 30px;min-height:215px}.feature .number{color:#8aa394;font-size:12px;letter-spacing:2px}.feature h3{font-size:21px;letter-spacing:-.04em;margin:24px 0 12px}.feature p{font-size:13px;color:#79857d;line-height:1.8;margin:0}.size-wrap{display:flex;justify-content:space-between;align-items:center;gap:36px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:55px 0}.size-wrap h3{font-size:28px;margin:12px 0;letter-spacing:-.04em}.size-wrap p{color:#7c8880;font-size:14px;line-height:1.7}.size-numbers{display:flex;gap:40px}.size-numbers div{display:flex;flex-direction:column;gap:12px}.size-numbers small{font-size:11px;letter-spacing:2px;color:#96a39b}.size-numbers strong{font-size:clamp(26px,3vw,40px);font-weight:600;letter-spacing:-.04em}.size-numbers em{font-style:normal;font-size:13px;color:#7c8a80}.closing{text-align:center;padding:70px 24px 110px}.closing h2{font-size:clamp(28px,4vw,45px);letter-spacing:-.05em;line-height:1.35}.closing p{color:#7c8980;line-height:1.8;font-size:14px}.closing a{display:inline-flex;padding:14px 24px;border:1px solid #b9c8be;margin-top:22px;font-size:13px}.footer{background:#26342e;color:#d0dad2;padding:32px clamp(20px,5vw,70px);display:flex;justify-content:space-between;gap:15px;font-size:11px;letter-spacing:1px}
+  @media(max-width:700px){.header{height:62px}.logo{font-size:21px}.back{font-size:11px}.intro{padding:64px 20px 38px}.intro h1{margin:19px 0}.intro p{font-size:13px}.film-section{padding:0 12px}.film-shell{aspect-ratio:4/3}.section{padding:84px 17px}.section-header{margin-bottom:29px}.section-header h2{margin:14px 0}.gallery-slide{aspect-ratio:4/5}.mock-label{font-size:10px}.wardrobe{width:51%;height:69%}.nav-btn{width:37px;height:37px;font-size:21px}.prev{left:10px}.next{right:10px}.feature-band{padding:80px 17px}.features{grid-template-columns:1fr;gap:12px}.feature{min-height:0;padding:25px}.feature h3{margin:15px 0 8px}.size-wrap{display:block;padding:40px 0}.size-numbers{margin-top:30px;gap:22px;justify-content:space-between}.size-numbers strong{font-size:27px}.footer{flex-direction:column}.closing{padding:60px 20px 80px}}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.gallery-track{transition:none}}
+  
+  /* PET LINE: purple × pink editorial kitsch */
+  .intro h1,.section-header h2,.closing h2{font-family:"Cafe24Meongi",Pretendard,sans-serif;font-weight:700;letter-spacing:-.025em}
+  .feature h3,.size-wrap h3{font-family:"Cafe24Nyangi",Pretendard,sans-serif;letter-spacing:0}
+  .intro .dot,.feature .number,.eyebrow{color:#ec73ac}
+  .intro{background:linear-gradient(145deg,#fff2fa,#f4edff 80%,#fff)}
+  .film-placeholder{background:linear-gradient(120deg,#fbe4f1,#eee5ff 60%,#fdf8ff)}
+  .film-placeholder .play{color:#816bff;border-color:#816bff}
+  .film-placeholder .small,.film-caption{color:#aa6cbe}
+  .mock.a{background:linear-gradient(105deg,#fff0f8 0 58%,#ebdfff 58%)}
+  .mock.b{background:linear-gradient(130deg,#fae3f4,#dcd2ff)}
+  .mock.c{background:linear-gradient(90deg,#e9deff,#fff0f7)}
+  .mock.d{background:linear-gradient(120deg,#fce6f4,#ebe0ff)}
+  .mock-label{color:#816bff}
+  .dots button.active{background:#816bff}
+  .feature-band{background:#f5efff}.feature{border-color:#eadff9;border-radius:18px}.feature:nth-child(2){background:#fff0f8}
+  .closing a{border-color:#816bff;border-radius:99px;color:#816bff}
+  .footer{background:#5940a0;color:#fff}
+  </style>
+</head>
+<body>
+  <header class="header"><a class="logo" href="/LOHOME/breed/" aria-label="LOHOME 브리드 기획안으로 이동">LOHOME<span>BETTER SPACE, BETTER LIFE</span></a><a href="/LOHOME/breed/" class="back">← 브리드 기획안으로</a></header>
+  <main>
+    <section class="intro"><span class="eyebrow">LOHOME · NEW PET FURNITURE</span><h1>BREED <span class="dot">PET</span> LINE</h1><p>반려생활과 일상의 수납이 자연스럽게 이어지는 공간.<br>함께 사는 집을 위한 새로운 가구 이야기.</p></section>
+    <section class="film-section" aria-label="브랜드 필름"><div class="film-shell"><video id="brandFilm" autoplay muted loop playsinline poster="" aria-label="브리드 펫라인 브랜드 필름"><source src="videos/brand-film.mp4" type="video/mp4"></video><div class="film-placeholder" id="filmPlaceholder"><div class="play">▶</div><span class="small">BRAND FILM / 16:9</span><strong>브랜드 필름 영상 영역</strong><span style="color:#72857a;font-size:12px">videos/brand-film.mp4 파일을 넣으면 자동 표시됩니다.</span></div></div><div class="film-caption">A NEW SPACE FOR LIFE WITH PETS</div></section>
+    <section class="section" aria-labelledby="gallery-heading"><div class="section-header"><span class="eyebrow">01 / LIFESTYLE GALLERY</span><h2>우리의 일상에<br>자연스럽게 스며드는 가구</h2><p>반려동물과 함께하는 공간을 사진으로 만나보세요.</p></div><div class="gallery" id="gallery"><div class="gallery-track" id="track">
+      <div class="gallery-slide"><div class="mock a"><div class="wardrobe"><div class="top"></div><div class="shelf"></div><div class="arch"></div></div><span class="mock-label">IMAGE 01 / LIFESTYLE</span></div></div>
+      <div class="gallery-slide"><div class="mock b"><div class="wardrobe"><div class="top"></div><div class="shelf"></div><div class="arch"></div></div><span class="mock-label">IMAGE 02 / PET SPACE</span></div></div>
+      <div class="gallery-slide"><div class="mock c"><div class="wardrobe"><div class="top"></div><div class="shelf"></div><div class="arch"></div></div><span class="mock-label">IMAGE 03 / STORAGE</span></div></div>
+      <div class="gallery-slide"><div class="mock d"><div class="wardrobe"><div class="top"></div><div class="shelf"></div><div class="arch"></div></div><span class="mock-label">IMAGE 04 / DETAIL</span></div></div>
+    </div><button class="nav-btn prev" id="prev" aria-label="이전 이미지">‹</button><button class="nav-btn next" id="next" aria-label="다음 이미지">›</button></div><div class="gallery-footer"><span class="counter" id="counter" aria-live="polite">01 / 04</span><div class="dots" id="dots" aria-label="갤러리 페이지"></div></div></section>
+    <section class="feature-band"><div class="feature-inner"><div class="section-header"><span class="eyebrow">02 / MADE FOR YOUR PET</span><h2>함께하는 생활을 생각한<br>세 가지 디테일</h2></div><div class="features"><article class="feature"><span class="number">POINT 01</span><h3>아치형 펫 휴식공간</h3><p>하부 도어의 아치형 입구로 반려동물이 드나드는 전용 공간을 구성합니다.</p></article><article class="feature"><span class="number">POINT 02</span><h3>선반 + 옷봉 수납</h3><p>상부 선반 1칸과 옷봉을 구성해 반려동물의 옷과 소품을 정리할 수 있습니다.</p></article><article class="feature"><span class="number">POINT 03</span><h3>깊이 620mm</h3><p>기존 브리드 시리즈와 자연스럽게 연결되는 깊이와 넉넉한 수납 공간.</p></article></div></div></section>
+    <section class="section"><div class="size-wrap"><div><span class="eyebrow">03 / PRODUCT SIZE</span><h3>브리드 펫라인 규격</h3><p>공간에 배치하기 전 기본 제품 사이즈를 확인해 주세요.<br>※ 최종 출시 사양에 따라 변동될 수 있습니다.</p></div><div class="size-numbers"><div><small>WIDTH</small><strong>800 <em>mm</em></strong></div><div><small>DEPTH</small><strong>620 <em>mm</em></strong></div><div><small>HEIGHT</small><strong>2110 <em>mm</em></strong></div></div></div></section>
+    <section class="closing"><span class="eyebrow">LOHOME · BREED PET LINE</span><h2>반려생활을 더 편안하게,<br>공간은 더 자연스럽게.</h2><p>우리의 일상에 어울리는 새로운 수납의 방식.</p><a href="/LOHOME/breed/">브리드 라인업 둘러보기 ↗</a></section>
+  </main>
+  <footer class="footer"><strong>LOHOME</strong><span>BREED PET LINE · CONCEPT PREVIEW 2026</span></footer>
+  <script>
+  (()=>{
+    const video=document.getElementById('brandFilm'),fallback=document.getElementById('filmPlaceholder');
+    video.addEventListener('loadeddata',()=>{fallback.style.display='none'});
+    video.addEventListener('error',()=>{fallback.style.display='grid'});
+    const track=document.getElementById('track'),slides=[...track.children],count=slides.length,dots=document.getElementById('dots'),counter=document.getElementById('counter');let index=0,downX=0,downY=0;
+    slides.forEach((_,i)=>{const dot=document.createElement('button');dot.type='button';dot.setAttribute('aria-label',`이미지 ${i+1} 보기`);dot.addEventListener('click',()=>go(i));dots.appendChild(dot)});
+    function go(i){index=(i+count)%count;track.style.transform=`translateX(-${index*100}%)`;counter.textContent=`${String(index+1).padStart(2,'0')} / ${String(count).padStart(2,'0')}`;[...dots.children].forEach((b,j)=>{b.classList.toggle('active',j===index);b.setAttribute('aria-current',j===index?'true':'false')})}
+    document.getElementById('prev').addEventListener('click',()=>go(index-1));document.getElementById('next').addEventListener('click',()=>go(index+1));
+    const gallery=document.getElementById('gallery');gallery.addEventListener('touchstart',e=>{downX=e.touches[0].clientX;downY=e.touches[0].clientY},{passive:true});gallery.addEventListener('touchend',e=>{let dx=e.changedTouches[0].clientX-downX,dy=e.changedTouches[0].clientY-downY;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy))go(index+(dx<0?1:-1))},{passive:true});
+    gallery.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')go(index-1);if(e.key==='ArrowRight')go(index+1)});
+    go(0);
+  })();
+  </script>
+</body>
+</html>
