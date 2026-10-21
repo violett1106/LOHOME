@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#f8f9f8" />
+  <meta name="theme-color" content="#816bff" />
   <meta name="description" content="LOHOME 브리드 펫라인 브랜드 스토리와 제품 소개" />
   <title>BREED PET LINE | LOHOME</title>
   <style>
@@ -39,19 +39,35 @@
   .feature-band{background:#f5efff}.feature{border-color:#eadff9;border-radius:18px}.feature:nth-child(2){background:#fff0f8}
   .closing a{border-color:#816bff;border-radius:99px;color:#816bff}
   .footer{background:#5940a0;color:#fff}
+
+  /* Pet gallery photos + separate arch-door request reference */
+  .gallery{background:#f6f0fc;border-radius:18px}
+  .gallery-slide img{object-fit:contain;background:#f8f4fc}
+  .counter{color:#816bff}.dots button{background:#e2cfe9}
+  .request-section{padding:25px 24px 110px;background:#fff}
+  .request-inner{max-width:1100px;margin:0 auto;text-align:center}
+  .request-inner h2{font-family:"Cafe24Meongi",Pretendard,sans-serif;font-size:clamp(28px,3.7vw,45px);letter-spacing:-.025em;margin:15px 0 35px;color:#493265}
+  .request-image{padding:22px;border-radius:22px;background:#faf2ff;border:1px solid #eadcf9}
+  .request-image img{max-height:900px;width:100%;object-fit:contain;margin:auto;border-radius:10px}
+  @media(max-width:700px){.request-section{padding:0 17px 80px}.request-image{padding:10px;border-radius:15px}.gallery-slide img{object-fit:contain}}
   </style>
 </head>
 <body>
   <header class="header"><a class="logo" href="/LOHOME/breed/" aria-label="LOHOME 브리드 기획안으로 이동">LOHOME<span>BETTER SPACE, BETTER LIFE</span></a><a href="/LOHOME/breed/" class="back">← 브리드 기획안으로</a></header>
   <main>
     <section class="intro"><span class="eyebrow">LOHOME · NEW PET FURNITURE</span><h1>BREED <span class="dot">PET</span> LINE</h1><p>반려생활과 일상의 수납이 자연스럽게 이어지는 공간.<br>함께 사는 집을 위한 새로운 가구 이야기.</p></section>
-    <section class="film-section" aria-label="브랜드 필름"><div class="film-shell"><video id="brandFilm" autoplay muted loop playsinline poster="" aria-label="브리드 펫라인 브랜드 필름"><source src="videos/brand-film.mp4" type="video/mp4"></video><div class="film-placeholder" id="filmPlaceholder"><div class="play">▶</div><span class="small">BRAND FILM / 16:9</span><strong>브랜드 필름 영상 영역</strong><span style="color:#72857a;font-size:12px">videos/brand-film.mp4 파일을 넣으면 자동 표시됩니다.</span></div></div><div class="film-caption">A NEW SPACE FOR LIFE WITH PETS</div></section>
+    <section class="film-section" aria-label="브랜드 필름"><div class="film-shell"><video id="brandFilm" autoplay muted loop playsinline poster="" aria-label="브리드 펫라인 브랜드 필름"><source src="images/pet_film.mp4" type="video/mp4"></video><div class="film-placeholder" id="filmPlaceholder"><div class="play">▶</div><span class="small">BRAND FILM / 16:9</span><strong>브랜드 필름 영상 영역</strong><span style="color:#72857a;font-size:12px">브랜드 필름 · PET LINE</span></div></div><div class="film-caption">A NEW SPACE FOR LIFE WITH PETS</div></section>
     <section class="section" aria-labelledby="gallery-heading"><div class="section-header"><span class="eyebrow">01 / LIFESTYLE GALLERY</span><h2>우리의 일상에<br>자연스럽게 스며드는 가구</h2><p>반려동물과 함께하는 공간을 사진으로 만나보세요.</p></div><div class="gallery" id="gallery"><div class="gallery-track" id="track">
-      <div class="gallery-slide"><div class="mock a"><div class="wardrobe"><div class="top"></div><div class="shelf"></div><div class="arch"></div></div><span class="mock-label">IMAGE 01 / LIFESTYLE</span></div></div>
-      <div class="gallery-slide"><div class="mock b"><div class="wardrobe"><div class="top"></div><div class="shelf"></div><div class="arch"></div></div><span class="mock-label">IMAGE 02 / PET SPACE</span></div></div>
-      <div class="gallery-slide"><div class="mock c"><div class="wardrobe"><div class="top"></div><div class="shelf"></div><div class="arch"></div></div><span class="mock-label">IMAGE 03 / STORAGE</span></div></div>
-      <div class="gallery-slide"><div class="mock d"><div class="wardrobe"><div class="top"></div><div class="shelf"></div><div class="arch"></div></div><span class="mock-label">IMAGE 04 / DETAIL</span></div></div>
-    </div><button class="nav-btn prev" id="prev" aria-label="이전 이미지">‹</button><button class="nav-btn next" id="next" aria-label="다음 이미지">›</button></div><div class="gallery-footer"><span class="counter" id="counter" aria-live="polite">01 / 04</span><div class="dots" id="dots" aria-label="갤러리 페이지"></div></div></section>
+      <div class="gallery-slide"><img src="images/brd_pe1.png" alt="브리드 펫라인 라이프스타일 1" loading="lazy"></div>
+      <div class="gallery-slide"><img src="images/brd_pet2.png" alt="브리드 펫라인 라이프스타일 2" loading="lazy"></div>
+      <div class="gallery-slide"><img src="images/brd_pe3.png" alt="브리드 펫라인 라이프스타일 3" loading="lazy"></div>
+      <div class="gallery-slide"><img src="../images/br_pet.png" alt="브리드 펫라인 제품 연출" loading="lazy"></div>
+      <div class="gallery-slide"><img src="../images/br_pet_1.png" alt="브리드 펫라인 디테일 1" loading="lazy"></div>
+      <div class="gallery-slide"><img src="../images/br_pet_2.png" alt="브리드 펫라인 디테일 2" loading="lazy"></div>
+      <div class="gallery-slide"><img src="../images/breed-pet-neutral.jpg" alt="브리드 펫라인 뉴트럴 컬러 연출" loading="lazy"></div>
+      <div class="gallery-slide"><img src="../images/breed-pet-blue.jpg" alt="브리드 펫라인 블루 컬러 연출" loading="lazy"></div>
+    </div><button class="nav-btn prev" id="prev" aria-label="이전 이미지">‹</button><button class="nav-btn next" id="next" aria-label="다음 이미지">›</button></div><div class="gallery-footer"><span class="counter" id="counter" aria-live="polite">01 / 08</span><div class="dots" id="dots" aria-label="갤러리 페이지"></div></div></section>
+    <section class="request-section" aria-labelledby="arch-request-heading"><div class="request-inner"><span class="eyebrow">PET LINE · ARCH DOOR</span><h2 id="arch-request-heading">브리드 펫, 아치 도어 제작 요청 사항</h2><div class="request-image"><img src="images/20261021_174751.png" loading="lazy" alt="브리드 펫 아치 도어 제작 요청 사항 참고 이미지"></div></div></section>
     <section class="feature-band"><div class="feature-inner"><div class="section-header"><span class="eyebrow">02 / MADE FOR YOUR PET</span><h2>함께하는 생활을 생각한<br>세 가지 디테일</h2></div><div class="features"><article class="feature"><span class="number">POINT 01</span><h3>아치형 펫 휴식공간</h3><p>하부 도어의 아치형 입구로 반려동물이 드나드는 전용 공간을 구성합니다.</p></article><article class="feature"><span class="number">POINT 02</span><h3>선반 + 옷봉 수납</h3><p>상부 선반 1칸과 옷봉을 구성해 반려동물의 옷과 소품을 정리할 수 있습니다.</p></article><article class="feature"><span class="number">POINT 03</span><h3>깊이 620mm</h3><p>기존 브리드 시리즈와 자연스럽게 연결되는 깊이와 넉넉한 수납 공간.</p></article></div></div></section>
     <section class="section"><div class="size-wrap"><div><span class="eyebrow">03 / PRODUCT SIZE</span><h3>브리드 펫라인 규격</h3><p>공간에 배치하기 전 기본 제품 사이즈를 확인해 주세요.<br>※ 최종 출시 사양에 따라 변동될 수 있습니다.</p></div><div class="size-numbers"><div><small>WIDTH</small><strong>800 <em>mm</em></strong></div><div><small>DEPTH</small><strong>620 <em>mm</em></strong></div><div><small>HEIGHT</small><strong>2110 <em>mm</em></strong></div></div></div></section>
     <section class="closing"><span class="eyebrow">LOHOME · BREED PET LINE</span><h2>반려생활을 더 편안하게,<br>공간은 더 자연스럽게.</h2><p>우리의 일상에 어울리는 새로운 수납의 방식.</p><a href="/LOHOME/breed/">브리드 라인업 둘러보기 ↗</a></section>
